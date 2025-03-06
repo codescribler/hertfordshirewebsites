@@ -15,23 +15,23 @@ const buttonVariants = cva(
         link: 'text-secondary-500 hover:text-secondary-600 underline-offset-4 hover:underline',
         'link-dark': 'text-primary-800 hover:text-primary-600 underline-offset-4 hover:underline',
         'apple-primary': 'bg-secondary-500 text-white hover:bg-secondary-600 hover:shadow-sm',
-        'apple-secondary': 'bg-primary-50 text-secondary-500 hover:bg-primary-100',
+        'apple-secondary': 'bg-primary-50 text-secondary-500 hover:bg-primary-100'
       },
       size: {
         default: 'h-11 py-2.5 px-5',
         sm: 'h-9 py-2 px-4 text-sm rounded-apple',
         lg: 'h-12 py-3 px-8 text-base',
-        xl: 'h-14 py-3.5 px-10 text-lg',
+        xl: 'h-14 py-3.5 px-10 text-lg'
       },
       fullWidth: {
-        true: 'w-full',
-      },
+        true: 'w-full'
+      }
     },
     defaultVariants: {
       variant: 'default',
       size: 'default',
-      fullWidth: false,
-    },
+      fullWidth: false
+    }
   }
 );
 
@@ -45,17 +45,17 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ 
-    className, 
-    variant, 
-    size, 
-    fullWidth, 
-    href, 
-    external, 
+  ({
+    className,
+    variant,
+    size,
+    fullWidth,
+    href,
+    external,
     icon,
     iconPosition = 'right',
-    children, 
-    ...props 
+    children,
+    ...props
   }, ref) => {
     const buttonContent = (
       <>
@@ -68,7 +68,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
       </>
     );
-    
+
     if (href) {
       return external ? (
         <a
@@ -88,7 +88,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         </Link>
       );
     }
-    
+
     return (
       <button
         className={buttonVariants({ variant, size, fullWidth, className })}

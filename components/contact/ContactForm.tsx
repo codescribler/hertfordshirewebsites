@@ -11,7 +11,7 @@ const ContactForm = () => {
     phone: '',
     company: '',
     message: '',
-    service: '',
+    service: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -53,7 +53,7 @@ const ContactForm = () => {
         <p className="text-green-700 mb-6">
           Your message has been sent successfully. We'll get back to you as soon as possible.
         </p>
-        <Button 
+        <Button
           onClick={() => setIsSubmitted(false)}
           variant="secondary"
         >
@@ -70,7 +70,7 @@ const ContactForm = () => {
           {error}
         </div>
       )}
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -86,7 +86,7 @@ const ContactForm = () => {
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
           />
         </div>
-        
+
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
             Email Address *
@@ -101,7 +101,7 @@ const ContactForm = () => {
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
           />
         </div>
-        
+
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
             Phone Number
@@ -115,7 +115,7 @@ const ContactForm = () => {
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
           />
         </div>
-        
+
         <div>
           <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
             Company Name
@@ -130,7 +130,7 @@ const ContactForm = () => {
           />
         </div>
       </div>
-      
+
       <div>
         <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
           Service You're Interested In
@@ -152,7 +152,7 @@ const ContactForm = () => {
           <option value="Other">Other</option>
         </select>
       </div>
-      
+
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
           Your Message *
@@ -167,7 +167,7 @@ const ContactForm = () => {
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
         ></textarea>
       </div>
-      
+
       <div>
         <Button
           type="submit"
