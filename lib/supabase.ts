@@ -48,30 +48,51 @@ interface SupabaseFormData {
 // Helper function to post data to webhook
 async function postToWebhook(standardizedData: any) {
   try {
-    console.log('Posting to webhook:', webhookUrl);
-    console.log('Data being sent:', JSON.stringify(standardizedData, null, 2));
+    // Cannot directly call webhook from client-side due to CORS restrictions
+    // Instead, create a simplified object without unnecessary fields 
+    // to reduce payload size
+    const webhookData = {
+      form_type: standardizedData.form_type,
+      name: standardizedData.name,
+      email: standardizedData.email,
+      phone: standardizedData.phone,
+      company: standardizedData.company,
+      message: standardizedData.message,
+      service: standardizedData.service,
+      website: standardizedData.website,
+      preferred_date: standardizedData.preferred_date,
+      preferred_time: standardizedData.preferred_time,
+      goals: standardizedData.goals,
+      timestamp: standardizedData.timestamp,
+      source_url: standardizedData.source_url
+    };
     
-    const response = await fetch(webhookUrl, {
+    // Log the attempt
+    console.log('Attempting to post data to webhook');
+    
+    // Make a same-origin request to our backend API route
+    // which will forward the request to Zapier
+    const response = await fetch('/api/webhook-forwarder', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
       },
-      body: JSON.stringify(standardizedData),
-      mode: 'cors',
-      cache: 'no-cache',
-      credentials: 'same-origin',
+      body: JSON.stringify({
+        url: webhookUrl,
+        data: webhookData
+      }),
     });
     
+    // Handle any errors from our API route
     if (!response.ok) {
       const responseText = await response.text();
-      console.error(`Webhook error response: ${response.status} ${response.statusText}`);
+      console.error(`API error: ${response.status} ${response.statusText}`);
       console.error('Response body:', responseText);
-      throw new Error(`Webhook error: ${response.status} ${response.statusText}`);
+      throw new Error(`API error: ${response.status} ${response.statusText}`);
     }
     
     const responseData = await response.json().catch(() => ({}));
-    console.log('Webhook response:', responseData);
+    console.log('Webhook forwarded successfully:', responseData);
     return responseData;
   } catch (error) {
     console.error('Error posting to webhook:', error);
