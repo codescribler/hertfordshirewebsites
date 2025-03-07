@@ -452,7 +452,7 @@ export const services: Service[] = [
         answer: 'The Herts Growth package includes 30 days of post-launch support. After that, we offer monthly maintenance and support packages to ensure your website continues to perform optimally.'
       },
     ],
-    price: '£4499',
+    price: '£4499 + £217/month for hosting, support & growth activities',
   },
   {
     id: 'additional-website-pages',
