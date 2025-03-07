@@ -27,7 +27,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl md:text-2xl text-primary-500 max-w-3xl mx-auto mb-10">
-          We create high-quality, SEO-optimized websites specifically designed for local Hertfordshire businesses looking to attract more customers.
+          We create high-quality, SEO-optimised websites specifically designed for local Hertfordshire businesses looking to attract more customers.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-5 justify-center mb-8">
