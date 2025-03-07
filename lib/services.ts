@@ -350,7 +350,7 @@ export const services: Service[] = [
         answer: 'Absolutely! The Herts Essentials package is designed to be expandable. You can easily upgrade to our Herts Professional package later as your business grows.'
       },
     ],
-    price: 'Starting from £699',
+    price: 'Starting from £699 + £57/month for hosting',
   },
   {
     id: 'herts-professional',
@@ -399,7 +399,7 @@ export const services: Service[] = [
         answer: 'The package includes contact forms, call-to-action buttons, newsletter signup forms, and other conversion-focused elements strategically placed throughout the website.'
       },
     ],
-    price: 'Starting from £1,795',
+    price: 'Starting from £1,795 + £217/month for hosting',
   },
   {
     id: 'herts-growth',
@@ -452,7 +452,7 @@ export const services: Service[] = [
         answer: 'The Herts Growth package includes 30 days of post-launch support. After that, we offer monthly maintenance and support packages to ensure your website continues to perform optimally.'
       },
     ],
-    price: '£4499 + £217/month for hosting, support & growth activities',
+    price: '£4499 + £497/month for hosting, support & growth activities',
   },
   {
     id: 'additional-website-pages',
