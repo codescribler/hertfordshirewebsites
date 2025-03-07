@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 
 const Testimonials = () => {
-  // Trust badges section
-  const trustBadges = [
-    { name: "Google Partner", image: "/images/googlesearch.jpg" },
-    { name: "Analytics Certified", image: "/images/analytics.jpg" },
-    { name: "SEO Certified", image: "/images/seo.jpg" },
+  // Client logos section
+  const clientLogos = [
+    { name: "First Point Physio", image: "/images/client-logos/firstpointphysio-logo.jpg" },
+    { name: "Laurel Cottage Dental Practice", image: "/images/client-logos/laurelcottagedentalpractice-logo.png" },
+    { name: "Renovation Planner", image: "/images/client-logos/renovationplanner-logo.png" },
   ];
 
   const testimonials = [
@@ -33,24 +33,26 @@ const Testimonials = () => {
 
   return (
     <Section className="bg-primary-50">
-      {/* Trust Badges */}
-      <div className="bg-white rounded-lg shadow-sm p-6 mb-16">
+      {/* Client Partnerships */}
+      <div className="bg-white rounded-lg shadow-sm p-6 mb-24">
         <div className="text-center mb-6">
-          <h3 className="text-xl font-semibold text-primary-800">Trusted Expertise</h3>
+          <h3 className="text-xl font-semibold text-primary-800">Client Partnerships</h3>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-          {trustBadges.map((badge, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <div className="w-16 h-16 relative mb-2">
-                <Image 
-                  src={badge.image}
-                  alt={badge.name}
-                  width={64}
-                  height={64}
-                  className="object-contain"
-                />
+          {clientLogos.map((client, index) => (
+            <div key={index} className="flex flex-col items-center group">
+              <div className="h-12 w-28 relative mb-2 overflow-hidden">
+                <div className="transition-all duration-300 filter grayscale group-hover:filter-none h-full w-full">
+                  <Image 
+                    src={client.image}
+                    alt={client.name}
+                    fill
+                    sizes="112px"
+                    className="object-contain"
+                  />
+                </div>
               </div>
-              <span className="text-sm font-medium text-primary-700">{badge.name}</span>
+              <span className="text-sm font-medium text-primary-700">{client.name}</span>
             </div>
           ))}
         </div>
