@@ -2,224 +2,224 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://hertfordshirewebsites.com/</loc>
+    <loc>https://hertfordshirewebsites.co.uk/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Main Pages -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/case-studies</loc>
+    <loc>https://hertfordshirewebsites.co.uk/case-studies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/contact</loc>
+    <loc>https://hertfordshirewebsites.co.uk/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/locations</loc>
+    <loc>https://hertfordshirewebsites.co.uk/locations</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/resources</loc>
+    <loc>https://hertfordshirewebsites.co.uk/resources</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/roi-calculator</loc>
+    <loc>https://hertfordshirewebsites.co.uk/roi-calculator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/privacy-policy</loc>
+    <loc>https://hertfordshirewebsites.co.uk/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/terms-of-service</loc>
+    <loc>https://hertfordshirewebsites.co.uk/terms-of-service</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <!-- Service Pages -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services/lead-magnet-email-automation</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/lead-magnet-email-automation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/local-seo-optimization</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimization</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/crm-integration</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/crm-integration</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/google-analytics-search-console-setup</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/google-analytics-search-console-setup</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/herts-essentials</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/herts-essentials</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/herts-professional</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/herts-professional</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/herts-growth</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/herts-growth</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/additional-website-pages</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/additional-website-pages</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/custom-blog-posts-content-writing</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/custom-blog-posts-content-writing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/advanced-seo-package</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/advanced-seo-package</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/ongoing-seo-content-marketing</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/ongoing-seo-content-marketing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Newly Added Service Pages -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services/performance-speed-optimization</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/performance-speed-optimization</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/security-monitoring-services</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/security-monitoring-services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/social-media-integration</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/social-media-integration</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/custom-web-development-api-integrations</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/custom-web-development-api-integrations</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/booking-appointment-system</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/booking-appointment-system</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/landing-page-design</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/landing-page-design</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Main Location Pages -->
   <url>
-    <loc>https://hertfordshirewebsites.com/locations/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/locations/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/locations/st-albans</loc>
+    <loc>https://hertfordshirewebsites.co.uk/locations/st-albans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/locations/hemel-hempstead</loc>
+    <loc>https://hertfordshirewebsites.co.uk/locations/hemel-hempstead</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/locations/stevenage</loc>
+    <loc>https://hertfordshirewebsites.co.uk/locations/stevenage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/locations/hertford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/locations/hertford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/locations/bishops-stortford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/locations/bishops-stortford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/locations/hitchin</loc>
+    <loc>https://hertfordshirewebsites.co.uk/locations/hitchin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/locations/harpenden</loc>
+    <loc>https://hertfordshirewebsites.co.uk/locations/harpenden</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <!-- Service Location Pages (Lead Magnet Email Automation) -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services/lead-magnet-email-automation/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/lead-magnet-email-automation/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/lead-magnet-email-automation/st-albans</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/lead-magnet-email-automation/st-albans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/lead-magnet-email-automation/hemel-hempstead</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/lead-magnet-email-automation/hemel-hempstead</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/lead-magnet-email-automation/stevenage</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/lead-magnet-email-automation/stevenage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Service Location Pages (Local SEO Optimization) -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services/local-seo-optimization/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimization/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/local-seo-optimization/st-albans</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimization/st-albans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/local-seo-optimization/hemel-hempstead</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimization/hemel-hempstead</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/local-seo-optimization/stevenage</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimization/stevenage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -228,149 +228,149 @@
   
   <!-- Performance & Speed Optimization -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services/performance-speed-optimization/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/performance-speed-optimization/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/performance-speed-optimization/st-albans</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/performance-speed-optimization/st-albans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/performance-speed-optimization/hemel-hempstead</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/performance-speed-optimization/hemel-hempstead</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/performance-speed-optimization/stevenage</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/performance-speed-optimization/stevenage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Security & Monitoring Services -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services/security-monitoring-services/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/security-monitoring-services/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/security-monitoring-services/st-albans</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/security-monitoring-services/st-albans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/security-monitoring-services/hemel-hempstead</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/security-monitoring-services/hemel-hempstead</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/security-monitoring-services/stevenage</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/security-monitoring-services/stevenage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Social Media Integration -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services/social-media-integration/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/social-media-integration/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/social-media-integration/st-albans</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/social-media-integration/st-albans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/social-media-integration/hemel-hempstead</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/social-media-integration/hemel-hempstead</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/social-media-integration/stevenage</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/social-media-integration/stevenage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Custom Web Development & API Integrations -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services/custom-web-development-api-integrations/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/custom-web-development-api-integrations/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/custom-web-development-api-integrations/st-albans</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/custom-web-development-api-integrations/st-albans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/custom-web-development-api-integrations/hemel-hempstead</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/custom-web-development-api-integrations/hemel-hempstead</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/custom-web-development-api-integrations/stevenage</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/custom-web-development-api-integrations/stevenage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Booking & Appointment System -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services/booking-appointment-system/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/booking-appointment-system/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/booking-appointment-system/st-albans</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/booking-appointment-system/st-albans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/booking-appointment-system/hemel-hempstead</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/booking-appointment-system/hemel-hempstead</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/booking-appointment-system/stevenage</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/booking-appointment-system/stevenage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Landing Page Design -->
   <url>
-    <loc>https://hertfordshirewebsites.com/services/landing-page-design/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/landing-page-design/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/landing-page-design/st-albans</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/landing-page-design/st-albans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/landing-page-design/hemel-hempstead</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/landing-page-design/hemel-hempstead</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/services/landing-page-design/stevenage</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/landing-page-design/stevenage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Resource Pages -->
   <url>
-    <loc>https://hertfordshirewebsites.com/resources/lead-magnet-checklist</loc>
+    <loc>https://hertfordshirewebsites.co.uk/resources/lead-magnet-checklist</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/resources/local-seo-checklist</loc>
+    <loc>https://hertfordshirewebsites.co.uk/resources/local-seo-checklist</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.com/resources/website-audit</loc>
+    <loc>https://hertfordshirewebsites.co.uk/resources/website-audit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

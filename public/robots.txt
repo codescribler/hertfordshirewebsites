@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://hertfordshirewebsites.com/sitemap.xml
+Sitemap: https://hertfordshirewebsites.co.uk/sitemap.xml
