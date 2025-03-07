@@ -48,19 +48,31 @@ interface SupabaseFormData {
 // Helper function to post data to webhook
 async function postToWebhook(standardizedData: any) {
   try {
+    console.log('Posting to webhook:', webhookUrl);
+    console.log('Data being sent:', JSON.stringify(standardizedData, null, 2));
+    
     const response = await fetch(webhookUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
       body: JSON.stringify(standardizedData),
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
     });
     
     if (!response.ok) {
-      throw new Error(`Webhook response: ${response.status} ${response.statusText}`);
+      const responseText = await response.text();
+      console.error(`Webhook error response: ${response.status} ${response.statusText}`);
+      console.error('Response body:', responseText);
+      throw new Error(`Webhook error: ${response.status} ${response.statusText}`);
     }
     
-    return await response.json();
+    const responseData = await response.json().catch(() => ({}));
+    console.log('Webhook response:', responseData);
+    return responseData;
   } catch (error) {
     console.error('Error posting to webhook:', error);
     throw error;
@@ -140,13 +152,19 @@ export async function submitFormData(formType: string, formData: FormData) {
       throw error;
     }
 
-    // Post to webhook
+    // Post to webhook - do this before returning
+    // We now await the webhook call and log more details about any failures
+    console.log('Attempting to post to webhook...');
+    
     try {
-      await postToWebhook(standardizedData);
+      const webhookResponse = await postToWebhook(standardizedData);
+      console.log('Successfully posted to webhook with response:', webhookResponse);
     } catch (webhookError) {
-      console.error('Error posting to webhook, but Supabase submission was successful:', webhookError);
+      console.error('Error posting to webhook, but Supabase submission was successful:');
+      console.error(webhookError);
+      
       // We don't throw the error here to avoid failing the whole submission
-      // if only the webhook part fails
+      // if only the webhook part fails, but we log extensively to help debugging
     }
 
     return result;
