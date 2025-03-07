@@ -43,6 +43,8 @@ export function generateStaticParams() {
     { service: 'custom-blog-posts-content-writing' },
     { service: 'advanced-seo-package' },
     { service: 'google-analytics-search-console-setup' },
+    { service: 'logo-design' },
+    { service: 'branding-package' },
   ];
 }
 
