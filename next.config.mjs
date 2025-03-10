@@ -13,6 +13,31 @@ const nextConfig = {
         hostname: '**'
       }
     ]
+  },
+  redirects: async () => {
+    return [
+      // Redirect American spelling to British spelling
+      {
+        source: '/services/local-seo-optimization',
+        destination: '/services/local-seo-optimisation',
+        permanent: true,
+      },
+      {
+        source: '/services/local-seo-optimization/:location',
+        destination: '/services/local-seo-optimisation/:location',
+        permanent: true,
+      },
+      {
+        source: '/services/performance-speed-optimization',
+        destination: '/services/performance-speed-optimisation',
+        permanent: true,
+      },
+      {
+        source: '/services/performance-speed-optimization/:location',
+        destination: '/services/performance-speed-optimisation/:location',
+        permanent: true,
+      }
+    ];
   }
 };
 

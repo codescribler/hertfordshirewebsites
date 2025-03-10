@@ -67,9 +67,9 @@ export const services: Service[] = [
     price: '£897',
   },
   {
-    id: 'local-seo-optimization',
-    title: 'Local SEO Optimization',
-    slug: 'local-seo-optimization',
+    id: 'local-seo-optimisation',
+    title: 'Local SEO Optimisation',
+    slug: 'local-seo-optimisation',
     shortDescription: 'Boost your visibility in local search results and attract more nearby customers.',
     description: 'Our Local SEO Optimization service helps your business stand out in local search results, Google Maps, and other local directories. We implement proven strategies to improve your local rankings, enhance your Google Business Profile, and drive more foot traffic to your physical location. This comprehensive approach ensures that when potential customers in your area search for your products or services, your business appears prominently in their results.',
     features: [
