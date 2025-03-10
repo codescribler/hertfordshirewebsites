@@ -54,7 +54,6 @@ const Header = () => {
     { name: 'Custom Web Development & API Integrations', path: '/services/custom-web-development-api-integrations' },
     { name: 'Booking & Appointment System', path: '/services/booking-appointment-system' },
     { name: 'Landing Page Design', path: '/services/landing-page-design' },
-    { name: 'Chatbot & Live Chat Integration', path: '/services/chatbot-live-chat-integration' },
   ];
 
   // Determine if we're on the contact page
