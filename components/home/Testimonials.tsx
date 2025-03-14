@@ -130,7 +130,7 @@ const Testimonials = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Case Study 1 */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative aspect-[16/10] bg-white p-2">
+          <div className="relative aspect-[16/10] bg-white p-4">
             <Image
               src="/images/meathook_website.png"
               alt="The Meat Hook website case study"
@@ -157,7 +157,7 @@ const Testimonials = () => {
 
         {/* Case Study 2 */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative aspect-[16/10] bg-white p-2">
+          <div className="relative aspect-[16/10] bg-white p-4">
             <Image
               src="/images/renovationplanner_website.png"
               alt="Renovation Planner website case study"
