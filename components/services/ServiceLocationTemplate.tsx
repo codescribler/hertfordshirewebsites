@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/Button';
 import { ServiceLocation, generateServiceLocationContent } from '@/lib/service-locations';
 import Image from 'next/image';
 import Link from 'next/link';
+import ServiceLocationSchema from '@/components/schema/ServiceLocationSchema';
 
 interface ServiceLocationTemplateProps {
   serviceLocation: ServiceLocation;
@@ -68,6 +69,10 @@ const ServiceLocationTemplate = ({ serviceLocation }: ServiceLocationTemplatePro
 
   return (
     <>
+      <ServiceLocationSchema 
+        locationName={location.name}
+        serviceOffered={service.title}
+      />
       {/* Hero Section */}
       <Section className="pt-32 pb-16 bg-primary-50">
         <Container>

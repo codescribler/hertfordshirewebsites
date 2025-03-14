@@ -5,6 +5,7 @@ import { Location } from '@/lib/locations';
 import { services } from '@/lib/services';
 import Link from 'next/link';
 import Image from 'next/image';
+import ServiceLocationSchema from '@/components/schema/ServiceLocationSchema';
 
 interface LocationPageTemplateProps {
   location: Location;
@@ -22,6 +23,10 @@ const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
 
   return (
     <>
+      <ServiceLocationSchema 
+        locationName={location.name}
+        serviceOffered="Web Design Services"
+      />
       {/* Hero Section */}
       <Section className="pt-32 pb-16 bg-primary-50">
         <Container>
