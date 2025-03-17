@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { trackDownload } from "@/components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "Dental Practice Website Optimisation Guide | Hertfordshire Websites",
@@ -43,6 +44,11 @@ export default function DentalPracticeGuide() {
                 href="/downloads/dental-practice-website-checklist.pdf" 
                 variant="apple-primary"
                 external={true}
+                onClick={() => trackDownload(
+                  '/downloads/dental-practice-website-checklist.pdf',
+                  'pdf',
+                  'Dental Practice Website Checklist'
+                )}
               >
                 Download Checklist
               </Button>
@@ -235,6 +241,11 @@ export default function DentalPracticeGuide() {
                   href="/downloads/dental-practice-website-checklist.pdf"
                   variant="apple-primary"
                   external={true}
+                  onClick={() => trackDownload(
+                    '/downloads/dental-practice-website-checklist.pdf',
+                    'pdf',
+                    'Dental Practice Website Checklist'
+                  )}
                 >
                   Download Checklist
                 </Button>

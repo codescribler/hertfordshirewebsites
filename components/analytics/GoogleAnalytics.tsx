@@ -7,6 +7,36 @@ import { useEffect } from 'react';
 const GA_MEASUREMENT_ID = 'G-7PDFFZ2RVN';
 const GA_DEBUG_MODE = false; // Set to true to enable console debug logs
 
+// Utility function to track custom events
+// Make this available globally so it can be called from anywhere in the app
+export const trackEvent = (
+  eventName: string, 
+  eventParams: Record<string, any> = {}
+) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', eventName, {
+      ...eventParams,
+      send_to: GA_MEASUREMENT_ID
+    });
+    
+    if (GA_DEBUG_MODE) {
+      console.log(`🔔 Event tracked: ${eventName}`, eventParams);
+    }
+  } else if (GA_DEBUG_MODE) {
+    console.log(`⚠️ Failed to track event "${eventName}": gtag not available`);
+  }
+};
+
+// Track file downloads
+export const trackDownload = (fileUrl: string, fileType: string, fileName: string) => {
+  trackEvent('file_download', {
+    file_url: fileUrl,
+    file_extension: fileType,
+    file_name: fileName,
+    content_type: 'download'
+  });
+};
+
 export default function GoogleAnalytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();

@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { trackDownload } from "@/components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "Physiotherapy Practice Online Marketing Essentials | Hertfordshire Websites",
@@ -43,6 +44,11 @@ export default function PhysiotherapyGuide() {
                 href="/downloads/physiotherapy-website-checklist.pdf" 
                 variant="apple-primary"
                 external={true}
+                onClick={() => trackDownload(
+                  '/downloads/physiotherapy-website-checklist.pdf',
+                  'pdf',
+                  'Physiotherapy Website Checklist'
+                )}
               >
                 Download Checklist
               </Button>
@@ -217,6 +223,11 @@ export default function PhysiotherapyGuide() {
                   href="/downloads/physiotherapy-website-checklist.pdf"
                   variant="apple-primary"
                   external={true}
+                  onClick={() => trackDownload(
+                    '/downloads/physiotherapy-website-checklist.pdf',
+                    'pdf',
+                    'Physiotherapy Website Checklist'
+                  )}
                 >
                   Download Checklist
                 </Button>

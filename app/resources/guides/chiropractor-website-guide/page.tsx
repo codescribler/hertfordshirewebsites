@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { trackDownload } from "@/components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "Chiropractor's Guide to Patient-Converting Websites | Hertfordshire Websites",
@@ -43,6 +44,11 @@ export default function ChiropractorGuide() {
                 href="/downloads/chiropractor-website-checklist.pdf" 
                 variant="apple-primary"
                 external={true}
+                onClick={() => trackDownload(
+                  '/downloads/chiropractor-website-checklist.pdf',
+                  'pdf',
+                  'Chiropractor Website Checklist'
+                )}
               >
                 Download Checklist
               </Button>
@@ -229,6 +235,11 @@ export default function ChiropractorGuide() {
                   href="/downloads/chiropractor-website-checklist.pdf"
                   variant="apple-primary"
                   external={true}
+                  onClick={() => trackDownload(
+                    '/downloads/chiropractor-website-checklist.pdf',
+                    'pdf',
+                    'Chiropractor Website Checklist'
+                  )}
                 >
                   Download Checklist
                 </Button>
