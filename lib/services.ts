@@ -590,6 +590,60 @@ export const services: Service[] = [
     ],
     price: 'Starting from £100 per month for up to 10 keywords/locations',
   },
+  {
+    id: 'performance-speed-optimisation',
+    title: 'Performance & Speed Optimisation',
+    slug: 'performance-speed-optimisation',
+    shortDescription: 'Improve your website loading speed and overall performance for better user experience and SEO.',
+    description: 'Our Performance & Speed Optimisation service is designed to make your website lightning-fast and responsive. We implement a variety of technical optimisations to reduce loading times, improve user experience, and boost your search engine rankings. A faster website not only keeps visitors engaged but also converts better and ranks higher in search results.',
+    features: [
+      'Comprehensive website performance audit',
+      'Image optimisation and compression',
+      'Code minification and cleanup',
+      'Browser caching implementation',
+      'Content Delivery Network (CDN) setup',
+      'Server response time improvement',
+      'Mobile loading speed enhancement',
+      'Core Web Vitals optimisation',
+      'Database optimisation (if applicable)',
+      'Page size reduction techniques',
+      'Plugin and third-party script audit',
+      'Performance testing and reporting',
+    ],
+    benefits: [
+      'Improve user experience with faster page loads',
+      'Reduce bounce rates by keeping visitors engaged',
+      'Boost conversion rates with responsive pages',
+      'Enhance mobile user experience',
+      'Improve search engine rankings',
+      'Reduce server load and hosting costs',
+      'Increase the number of pages viewed per visit',
+      'Support more concurrent users during peak times',
+    ],
+    faqs: [
+      {
+        question: 'How much can performance optimisation improve my website speed?',
+        answer: 'Most websites we optimise see a 40-80% improvement in loading times, depending on their current state. Websites with significant performance issues often see the most dramatic improvements.'
+      },
+      {
+        question: 'Will performance optimisation affect how my website looks?',
+        answer: 'No, our optimisation techniques maintain the visual appearance of your website while improving its performance. We focus on technical improvements that work behind the scenes to make your site faster without changing its design or functionality.'
+      },
+      {
+        question: 'How long does the performance optimisation process take?',
+        answer: 'A typical performance optimisation project takes 1-2 weeks to complete, depending on the size and complexity of your website. Some improvements can be implemented immediately, while others may require more extensive changes.'
+      },
+      {
+        question: 'Do you optimize for mobile devices too?',
+        answer: 'Absolutely! Mobile optimisation is a crucial part of our service. We ensure your website loads quickly and performs well on all devices, with special attention to mobile performance since this affects both user experience and search rankings.'
+      },
+      {
+        question: 'How will I know if the optimisations are working?',
+        answer: 'We provide before-and-after performance reports that demonstrate the improvements made. These reports include metrics like page load times, PageSpeed scores, and Core Web Vitals measurements. You\'ll also notice the improvements when browsing your own website.'
+      },
+    ],
+    price: 'Starting from £397',
+  },
 ];
 
 export function getAllServiceSlugs() {
