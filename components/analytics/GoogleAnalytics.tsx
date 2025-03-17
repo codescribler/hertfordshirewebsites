@@ -1,8 +1,9 @@
 'use client';
 
 import Script from 'next/script';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { Suspense } from 'react';
 
 const GA_MEASUREMENT_ID = 'G-7PDFFZ2RVN';
 const GA_DEBUG_MODE = false; // Set to true to enable console debug logs
@@ -37,24 +38,34 @@ export const trackDownload = (fileUrl: string, fileType: string, fileName: strin
   });
 };
 
-export default function GoogleAnalytics() {
+// This component handles the page view tracking with search params
+// It's wrapped in Suspense in the main component
+function PageViewTracker() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-
+  const [url, setUrl] = useState<string | null>(null);
+  
   // Log analytics debug info if debug mode is enabled
   const logAnalyticsDebug = (message: string, data?: any) => {
     if (GA_DEBUG_MODE) {
       console.log(`🔍 GA Debug: ${message}`, data || '');
     }
   };
-
-  // Handle page views when path changes
+  
+  // Get search params safely client-side only
   useEffect(() => {
-    if (pathname) {
-      const url = searchParams.toString() 
-        ? `${pathname}?${searchParams.toString()}`
+    // This ensures we're only running on the client and can access window
+    if (typeof window !== 'undefined') {
+      const searchParamsString = window.location.search;
+      const fullUrl = searchParamsString 
+        ? `${pathname}${searchParamsString}`
         : pathname;
-      
+      setUrl(fullUrl);
+    }
+  }, [pathname]);
+  
+  // Handle page views when path or search params change
+  useEffect(() => {
+    if (url) {
       const handlePageView = () => {
         if (typeof window !== 'undefined' && window.gtag) {
           logAnalyticsDebug(`📊 Page view triggered for: ${url}`);
@@ -82,15 +93,24 @@ export default function GoogleAnalytics() {
       
       return () => clearTimeout(timer);
     }
-  }, [pathname, searchParams]);
+  }, [url]);
+  
+  // This component doesn't render anything
+  return null;
+}
 
+export default function GoogleAnalytics() {
   // Handle script load events
   const handleGtagLoaded = () => {
-    logAnalyticsDebug('✅ Google Analytics script loaded successfully');
+    if (GA_DEBUG_MODE) {
+      console.log('✅ Google Analytics script loaded successfully');
+    }
   };
 
   const handleGtagError = () => {
-    logAnalyticsDebug('❌ Error loading Google Analytics script');
+    if (GA_DEBUG_MODE) {
+      console.log('❌ Error loading Google Analytics script');
+    }
   };
 
   return (
@@ -125,6 +145,11 @@ export default function GoogleAnalytics() {
           ${GA_DEBUG_MODE ? "console.log('🔰 Google Analytics initialized with ID: " + GA_MEASUREMENT_ID + "');" : ''}
         `}
       </Script>
+      
+      {/* Wrap the component using useSearchParams in Suspense */}
+      <Suspense fallback={null}>
+        <PageViewTracker />
+      </Suspense>
     </>
   );
 }
