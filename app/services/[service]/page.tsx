@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getServiceBySlug } from '@/lib/services';
+import { getServiceBySlug, getAllServiceSlugs } from '@/lib/services';
 import ServicePageTemplate from '@/components/services/ServicePageTemplate';
 
 interface ServicePageProps {
@@ -35,17 +35,13 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 }
 
 export function generateStaticParams() {
-  return [
-    { service: 'herts-essentials' },
-    { service: 'herts-professional' },
-    { service: 'herts-growth' },
-    { service: 'additional-website-pages' },
-    { service: 'custom-blog-posts-content-writing' },
-    { service: 'advanced-seo-package' },
-    { service: 'google-analytics-search-console-setup' },
-    { service: 'logo-design' },
-    { service: 'branding-package' },
-  ];
+  // Get all service slugs dynamically
+  const allSlugs = getAllServiceSlugs();
+  
+  // Map the slugs to the expected format
+  return allSlugs.map((slug: string) => ({
+    service: slug
+  }));
 }
 
 export default function ServicePage({ params }: ServicePageProps) {
