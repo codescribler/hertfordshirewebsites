@@ -5,13 +5,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Resources | Hertfordshire Websites",
-  description: "Free tools and resources to help you improve your website and online presence.",
-  keywords: "website audit tool, ROI calculator, website resources, website assessment, Hertfordshire",
+  title: "Website Tools & Healthcare Resources | Hertfordshire Websites",
+  description: "Free healthcare-specific guides and website tools to help healthcare providers and businesses improve their online presence and attract more clients.",
+  keywords: "healthcare website guides, chiropractor website, physiotherapy marketing, dental practice website, website audit tool, SEO checklist, Hertfordshire",
 };
 
 export default function ResourcesPage() {
   const resources = [
+    {
+      title: "Healthcare Website Guides",
+      description: "Specialised guides for healthcare providers including chiropractors, physiotherapists, and dentists to improve their online presence and attract more patients.",
+      image: "/images/industries/A-modern-chiropractor-clinic.jpg.webp",
+      link: "/resources/guides",
+    },
     {
       title: "Website Audit Tool",
       description: "Assess your website's effectiveness with our comprehensive audit tool. Get actionable insights on how to improve your site's performance.",

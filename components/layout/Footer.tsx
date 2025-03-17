@@ -33,9 +33,9 @@ const Footer = () => {
   return (
     <footer className="bg-primary-50 border-t border-primary-100">
       <Container size="apple" className="py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
           {/* Logo and Contact */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-5">
             <Link href="/" className="flex items-center gap-3 mb-6">
             <Image 
               src="/images/hertfordshirewebsiteslogo2.png" 
@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
           
           {/* Quick Links */}
-          <div>
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-medium text-primary-800 mb-5">Quick Links</h3>
             <ul className="space-y-3">
               {mainLinks.map((link, index) => (
@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
           
           {/* Services */}
-          <div>
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-medium text-primary-800 mb-5">Services</h3>
             <ul className="space-y-3">
               {serviceLinks.map((link, index) => (
@@ -105,7 +105,7 @@ const Footer = () => {
           </div>
           
           {/* Locations */}
-          <div>
+          <div className="lg:col-span-3">
             <h3 className="text-lg font-medium text-primary-800 mb-5">Locations</h3>
             <ul className="space-y-3">
             {locationLinks.map((link, index) => (              

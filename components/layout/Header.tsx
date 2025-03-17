@@ -162,14 +162,62 @@ const Header = () => {
             ROI Calculator
           </Link>
           
-          <Link 
-            href="/resources" 
-            className={`text-sm font-medium hover:text-secondary-500 transition-all duration-400 ease-apple ${
+          <div className="relative group">
+            <button className={`flex items-center text-sm font-medium group-hover:text-secondary-500 transition-all duration-400 ease-apple ${
               pathname.startsWith('/resources') ? 'text-secondary-500' : 'text-primary-800'
-            }`}
-          >
-            Resources
-          </Link>
+            }`}>
+              Resources
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-4 w-4 ml-1 transition-transform duration-400 ease-apple group-hover:rotate-180" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            <div className="absolute left-0 mt-2 w-72 bg-white/95 backdrop-blur-sm rounded-apple shadow-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-apple z-50 transform -translate-x-1/4 border border-primary-100">
+              <div className="py-2">
+                <Link 
+                  href="/resources"
+                  className={`block px-5 py-2.5 text-sm hover:bg-primary-50 transition-all duration-400 ease-apple text-primary-800`}
+                  onClick={closeMenu}
+                >
+                  All Resources
+                </Link>
+                <Link 
+                  href="/resources/guides"
+                  className={`block px-5 py-2.5 text-sm hover:bg-primary-50 transition-all duration-400 ease-apple text-primary-800`}
+                  onClick={closeMenu}
+                >
+                  Guides
+                </Link>
+                <Link 
+                  href="/resources/website-audit"
+                  className={`block px-5 py-2.5 text-sm hover:bg-primary-50 transition-all duration-400 ease-apple text-primary-800`}
+                  onClick={closeMenu}
+                >
+                  Website Audit
+                </Link>
+                <Link 
+                  href="/resources/lead-magnet-checklist"
+                  className={`block px-5 py-2.5 text-sm hover:bg-primary-50 transition-all duration-400 ease-apple text-primary-800`}
+                  onClick={closeMenu}
+                >
+                  Lead Magnet Checklist
+                </Link>
+                <Link 
+                  href="/resources/local-seo-checklist"
+                  className={`block px-5 py-2.5 text-sm hover:bg-primary-50 transition-all duration-400 ease-apple text-primary-800`}
+                  onClick={closeMenu}
+                >
+                  Local SEO Checklist
+                </Link>
+              </div>
+            </div>
+          </div>
           
           <Link 
             href="/contact" 
@@ -264,15 +312,39 @@ const Header = () => {
               ROI Calculator
             </Link>
             
-            <Link 
-              href="/resources" 
-              className={`text-lg font-medium py-2 ${
-                pathname.startsWith('/resources') ? 'text-secondary-500' : 'text-primary-800'
-              }`}
-              onClick={closeMenu}
-            >
-              Resources
-            </Link>
+            <div className="border-t border-primary-100 pt-6">
+              <h3 className="text-lg font-medium text-primary-800 mb-4">Resources</h3>
+              <div className="ml-4 flex flex-col space-y-3">
+                <Link 
+                  href="/resources/guides"
+                  className={`text-base ${pathname.startsWith('/resources/guides') ? 'text-secondary-500' : 'text-primary-500'}`}
+                  onClick={closeMenu}
+                >
+                  Guides
+                </Link>
+                <Link 
+                  href="/resources/website-audit"
+                  className={`text-base ${pathname.startsWith('/resources/website-audit') ? 'text-secondary-500' : 'text-primary-500'}`}
+                  onClick={closeMenu}
+                >
+                  Website Audit
+                </Link>
+                <Link 
+                  href="/resources/lead-magnet-checklist"
+                  className={`text-base ${pathname.startsWith('/resources/lead-magnet-checklist') ? 'text-secondary-500' : 'text-primary-500'}`}
+                  onClick={closeMenu}
+                >
+                  Lead Magnet Checklist
+                </Link>
+                <Link 
+                  href="/resources/local-seo-checklist"
+                  className={`text-base ${pathname.startsWith('/resources/local-seo-checklist') ? 'text-secondary-500' : 'text-primary-500'}`}
+                  onClick={closeMenu}
+                >
+                  Local SEO Checklist
+                </Link>
+              </div>
+            </div>
             
             <Link 
               href="/contact" 
