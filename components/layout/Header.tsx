@@ -79,6 +79,24 @@ const Header = () => {
             <span className="text-primary-800 font-semibold leading-tight text-sm">Hertfordshire</span>
             <span className="text-primary-800 font-semibold leading-tight text-sm">Websites</span>
           </div>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "Hertfordshire Websites",
+              "image": "https://www.hertfordshirewebsites.co.uk/images/hertfordshirewebsiteslogo2.png",
+              "telephone": "+447786556885",
+              "email": "hello@hertfordshirewebsites.co.uk",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Hertfordshire, United Kingdom"
+              },
+              "sameAs": [
+                "https://twitter.com/hertswebsites",
+                "https://linkedin.com/company/hertfordshire-websites"
+              ]
+            })}
+          </script>
         </Link>
 
         {/* Desktop Navigation */}

@@ -55,7 +55,7 @@ const Hero = () => {
         <div className="aspect-[16/9] relative rounded-apple overflow-hidden shadow-lg">
           <Image
             src="/images/hero-image-example-websites.jpg"
-            alt="Professional website design examples"
+            alt="Web design portfolio examples for Hertfordshire businesses including cafes, shops, and professional services"
             fill
             className="object-cover"
             priority

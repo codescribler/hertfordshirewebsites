@@ -33,7 +33,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary-50 border-t border-primary-100">
       <Container size="apple" className="py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Contact */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
@@ -108,16 +108,24 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-medium text-primary-800 mb-5">Locations</h3>
             <ul className="space-y-3">
-              {locationLinks.map((link, index) => (
-                <li key={index}>
-                  <Link 
-                    href={link.href}
-                    className="text-primary-500 hover:text-secondary-500 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+            {locationLinks.map((link, index) => (              
+              <li key={index}>
+                <Link 
+                  href={link.href}
+                  className="text-primary-500 hover:text-secondary-500 transition-colors"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link 
+                href="/locations/all"
+                className="text-primary-500 hover:text-secondary-500 transition-colors font-medium"
+              >
+                View All Locations →
+              </Link>
+            </li>
             </ul>
           </div>
         </div>
