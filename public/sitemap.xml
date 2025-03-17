@@ -141,6 +141,14 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- All Locations Page -->
+  <url>
+    <loc>https://hertfordshirewebsites.co.uk/locations/all</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <!-- Main Location Pages -->
   <url>
     <loc>https://hertfordshirewebsites.co.uk/locations/watford</loc>
@@ -205,33 +213,33 @@
     <priority>0.6</priority>
   </url>
   
-  <!-- Service Location Pages (Local SEO Optimization) -->
+  <!-- Service Location Pages (Local SEO Optimisation) -->
   <url>
-    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimization/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimisation/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimization/st-albans</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimisation/st-albans</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimization/hemel-hempstead</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimisation/hemel-hempstead</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimization/stevenage</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimisation/stevenage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <!-- Service Location Pages for New Services -->
   
-  <!-- Performance & Speed Optimization -->
+  <!-- Performance & Speed Optimisation -->
   <url>
-    <loc>https://hertfordshirewebsites.co.uk/services/performance-speed-optimization/watford</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/performance-speed-optimisation/watford</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
