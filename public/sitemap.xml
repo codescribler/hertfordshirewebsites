@@ -3,6 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://hertfordshirewebsites.co.uk/</loc>
+    <lastmod>2025-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -56,7 +57,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimization</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/local-seo-optimisation</loc>
+    <lastmod>2025-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -108,7 +110,8 @@
   
   <!-- Newly Added Service Pages -->
   <url>
-    <loc>https://hertfordshirewebsites.co.uk/services/performance-speed-optimization</loc>
+    <loc>https://hertfordshirewebsites.co.uk/services/performance-speed-optimisation</loc>
+    <lastmod>2025-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -251,8 +254,9 @@
   <!-- Security & Monitoring Services -->
   <url>
     <loc>https://hertfordshirewebsites.co.uk/services/security-monitoring-services/watford</loc>
+    <lastmod>2025-03-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://hertfordshirewebsites.co.uk/services/security-monitoring-services/st-albans</loc>
@@ -371,6 +375,20 @@
   </url>
   <url>
     <loc>https://hertfordshirewebsites.co.uk/resources/website-audit</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Case Studies -->
+  <url>
+    <loc>https://hertfordshirewebsites.co.uk/case-studies/the-meat-hook</loc>
+    <lastmod>2025-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hertfordshirewebsites.co.uk/case-studies/renovation-planner</loc>
+    <lastmod>2025-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
