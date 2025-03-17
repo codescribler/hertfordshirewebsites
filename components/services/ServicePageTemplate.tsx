@@ -4,14 +4,49 @@ import { Button } from '@/components/ui/Button';
 import { Service } from '@/lib/services';
 import Image from 'next/image';
 import Link from 'next/link';
+import FAQSchema from '@/components/schema/FAQSchema';
+import BreadcrumbSchema from '@/components/schema/BreadcrumbSchema';
+import ServiceSchema from '@/components/schema/ServiceSchema';
 
 interface ServicePageTemplateProps {
   service: Service;
 }
 
 const ServicePageTemplate = ({ service }: ServicePageTemplateProps) => {
+  // Generate breadcrumb data
+  const breadcrumbItems = [
+    {
+      name: 'Home',
+      item: 'https://hertfordshirewebsites.co.uk'
+    },
+    {
+      name: 'Services',
+      item: 'https://hertfordshirewebsites.co.uk/services'
+    },
+    {
+      name: service.title,
+      item: `https://hertfordshirewebsites.co.uk/services/${service.slug}`
+    }
+  ];
+
+  // Service price for schema
+  const serviceOffer = service.price ? {
+    price: parseInt(service.price.replace(/[^0-9]/g, '')),
+    priceCurrency: 'GBP',
+    availability: 'https://schema.org/InStock'
+  } : undefined;
+
   return (
     <>
+      {/* Schema.org structured data */}
+      <FAQSchema faqs={service.faqs} />
+      <BreadcrumbSchema items={breadcrumbItems} />
+      <ServiceSchema 
+        name={service.title}
+        description={service.shortDescription}
+        url={`https://hertfordshirewebsites.co.uk/services/${service.slug}`}
+        offers={serviceOffer}
+      />
       {/* Hero Section */}
       <Section className="pt-32 pb-16 bg-primary-50">
         <Container>
