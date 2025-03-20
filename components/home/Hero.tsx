@@ -26,11 +26,33 @@ const Hero = () => {
           Professional Websites <span className="text-gradient">That Grow</span> Your Hertfordshire Business
         </h1>
         
-        <p className="text-xl md:text-2xl text-primary-500 max-w-3xl mx-auto mb-10">
+        <p className="text-xl md:text-2xl text-primary-500 max-w-3xl mx-auto mb-6">
           We create high-quality, SEO-optimised websites specifically designed for local Hertfordshire businesses looking to attract more customers.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-5 justify-center mb-8">
+        {/* Three outcome checkmarks */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-8 max-w-4xl mx-auto">
+          <div className="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-secondary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="font-medium">More Local Customers</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-secondary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="font-medium">Higher Conversion Rates</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-secondary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="font-medium">Better ROI Than Ads</span>
+          </div>
+        </div>
+        
+        <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
           <Button 
             href="/contact#discovery-call" 
             variant="apple-primary" 

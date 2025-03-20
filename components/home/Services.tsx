@@ -36,6 +36,7 @@ const ServicesSection = () => {
       idealFor: 'Small local businesses, sole traders, and startups',
       icon: <WebsiteIcon />,
       link: '/services/herts-essentials',
+      price: '£699',
     },
     {
       title: 'Herts Professional',
@@ -44,6 +45,7 @@ const ServicesSection = () => {
       idealFor: 'Established local businesses looking to grow',
       icon: <WebsiteIcon />,
       link: '/services/herts-professional',
+      price: '£1,795',
     },
     {
       title: 'Herts Growth',
@@ -52,6 +54,7 @@ const ServicesSection = () => {
       idealFor: 'Growing businesses ready to scale operations',
       icon: <WebsiteIcon />,
       link: '/services/herts-growth',
+      price: '£4,499',
     },
   ];
 
@@ -150,8 +153,16 @@ const ServicesSection = () => {
         {coreServices.map((service, index) => (
           <div 
             key={index} 
-            className="bg-white rounded-apple p-10 border border-primary-100 hover:shadow-sm transition-all duration-400 ease-apple hover-lift"
+            className="bg-white rounded-apple p-10 border border-primary-100 hover:shadow-sm transition-all duration-400 ease-apple hover-lift relative"
           >
+            {/* Price Tag */}
+            <div className="absolute top-4 right-4">
+              <div className="bg-secondary-500 text-white px-4 py-2 rounded-full shadow-sm">
+                <span className="text-sm font-medium">From</span>
+                <span className="text-lg font-bold ml-1">{service.price}</span>
+              </div>
+            </div>
+          
             <div className="mb-6 feature-icon">{service.icon}</div>
             <h3 className="text-2xl font-medium mb-4 text-primary-800">{service.title}</h3>
             <p className="text-primary-500 mb-4">{service.description}</p>
