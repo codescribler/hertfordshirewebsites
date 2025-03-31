@@ -646,7 +646,7 @@ export const services: Service[] = [
   },
 ];
 
-export function getAllServiceSlugs() {
+export function getAllServiceSlugs(): string[] {
   return services.map(service => service.slug);
 }
 

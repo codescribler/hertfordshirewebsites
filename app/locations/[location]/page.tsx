@@ -9,15 +9,15 @@ interface LocationPageProps {
   };
 }
 
-export async function generateMetadata({ params }: LocationPageProps): Promise<Metadata> {
+export function generateMetadata({ params }: LocationPageProps): Metadata {
   const location = getLocationBySlug(params.location);
-  
+
   if (!location) {
     return {
       title: 'Location Not Found',
     };
   }
-  
+
   return {
     title: `Web Design in ${location.name} | Hertfordshire Websites`,
     description: `Professional web design services for businesses in ${location.name}, Hertfordshire. Custom websites designed to attract customers and help your business grow.`,
@@ -44,10 +44,10 @@ export function generateStaticParams() {
 
 export default function LocationPage({ params }: LocationPageProps) {
   const location = getLocationBySlug(params.location);
-  
+
   if (!location) {
     notFound();
   }
-  
+
   return <LocationPageTemplate location={location} />;
 }

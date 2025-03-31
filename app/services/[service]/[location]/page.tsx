@@ -10,16 +10,16 @@ interface ServiceLocationPageProps {
   };
 }
 
-export async function generateMetadata({ params }: ServiceLocationPageProps): Promise<Metadata> {
+export function generateMetadata({ params }: ServiceLocationPageProps): Metadata {
   const slug = `${params.service}/${params.location}`;
   const serviceLocation = getServiceLocationBySlug(slug);
-  
+
   if (!serviceLocation) {
     return {
       title: 'Service Location Not Found',
     };
   }
-  
+
   return {
     title: serviceLocation.title,
     description: serviceLocation.description,
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: ServiceLocationPageProps): Pr
 
 export function generateStaticParams() {
   const slugs = generateServiceLocationSlugs();
-  
+
   return slugs.map(slug => {
     const [service, location] = slug.split('/');
     return {
@@ -42,10 +42,10 @@ export function generateStaticParams() {
 export default function ServiceLocationPage({ params }: ServiceLocationPageProps) {
   const slug = `${params.service}/${params.location}`;
   const serviceLocation = getServiceLocationBySlug(slug);
-  
+
   if (!serviceLocation) {
     notFound();
   }
-  
+
   return <ServiceLocationTemplate serviceLocation={serviceLocation} />;
 }
