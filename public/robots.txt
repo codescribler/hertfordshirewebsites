@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /search/
+Disallow: /tmp/
+Crawl-delay: 5
+Host: hertfordshirewebsites.co.uk
+
+# Case-sensitive URL matching
+Allow: /*?$
+Allow: /wp-content/uploads/
+
+# Sitemaps
+Sitemap: https://hertfordshirewebsites.co.uk/sitemap.xml
+Sitemap: https://hertfordshirewebsites.co.uk/image-sitemap.xml
