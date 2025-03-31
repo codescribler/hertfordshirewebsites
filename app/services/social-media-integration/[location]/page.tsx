@@ -7,6 +7,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getAllLocationSlugs } from '@/lib/locations';
 
+// Force static rendering
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = false;
+
 interface ServiceLocationPageProps {
   params: {
     location: string;

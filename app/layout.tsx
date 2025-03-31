@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import LocalBusinessSchema from "@/components/schema/LocalBusinessSchema";
 import { Analytics } from '@vercel/analytics/react';
@@ -12,6 +12,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -19,9 +20,10 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://hertfordshirewebsites.com'),
   title: {
-    template: '%s | Hertfordshire Websites',
     default: 'Hertfordshire Websites | Professional Web Design & SEO Services',
+    template: '%s | Hertfordshire Websites',
   },
   description: 'Professional web design agency providing high-quality websites for businesses of all sizes in Hertfordshire. SEO-optimized, mobile-friendly websites that generate leads.',
   keywords: 'web design, website design, Hertfordshire, SEO, business websites, professional websites, web development, lead generation',
@@ -33,7 +35,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://hertfordshirewebsites.co.uk'),
   alternates: {
     canonical: '/',
   },
@@ -63,16 +64,19 @@ export const metadata: Metadata = {
   },
 };
 
+// Force static rendering
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = false;
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en-GB" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased min-h-screen flex flex-col`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased min-h-screen flex flex-col`}>
         <GoogleAnalytics />
         <LocalBusinessSchema />
         <Header />
