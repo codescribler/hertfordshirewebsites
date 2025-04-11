@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { AwardSubmission, FormData } from './types';
 
 // Initialize the Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
@@ -9,23 +10,7 @@ const webhookUrl = 'https://hooks.zapier.com/hooks/catch/629009/2qw8e3q/';
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Define the form data interface
-interface FormData {
-  [key: string]: any;
-  name?: string;
-  email?: string;
-  phone?: string;
-  company?: string;
-  message?: string;
-  service?: string;
-  website?: string;
-  preferredDate?: string;
-  preferred_date?: string;
-  preferredTime?: string;
-  preferred_time?: string;
-  goals?: string;
-  consent?: boolean;
-}
+// FormData interface is now imported from ./types
 
 // Define the data structure for Supabase
 interface SupabaseFormData {
@@ -49,7 +34,7 @@ interface SupabaseFormData {
 async function postToWebhook(standardizedData: any) {
   try {
     // Cannot directly call webhook from client-side due to CORS restrictions
-    // Instead, create a simplified object without unnecessary fields 
+    // Instead, create a simplified object without unnecessary fields
     // to reduce payload size
     const webhookData = {
       form_type: standardizedData.form_type,
@@ -66,10 +51,10 @@ async function postToWebhook(standardizedData: any) {
       timestamp: standardizedData.timestamp,
       source_url: standardizedData.source_url
     };
-    
+
     // Log the attempt
     console.log('Attempting to post data to webhook');
-    
+
     // Make a same-origin request to our backend API route
     // which will forward the request to Zapier
     const response = await fetch('/api/webhook-forwarder', {
@@ -82,7 +67,7 @@ async function postToWebhook(standardizedData: any) {
         data: webhookData
       }),
     });
-    
+
     // Handle any errors from our API route
     if (!response.ok) {
       const responseText = await response.text();
@@ -90,12 +75,56 @@ async function postToWebhook(standardizedData: any) {
       console.error('Response body:', responseText);
       throw new Error(`API error: ${response.status} ${response.statusText}`);
     }
-    
+
     const responseData = await response.json().catch(() => ({}));
     console.log('Webhook forwarded successfully:', responseData);
     return responseData;
   } catch (error) {
     console.error('Error posting to webhook:', error);
+    throw error;
+  }
+}
+
+// Helper function to submit award submission data
+export async function submitAwardSubmission(submissionData: AwardSubmission) {
+  try {
+    // Insert data into Supabase
+    const { data: result, error } = await supabase
+      .from('award_submissions')
+      .insert([submissionData]);
+
+    if (error) {
+      console.error('Error submitting award to Supabase:', error);
+      throw error;
+    }
+
+    // Create standardized data structure for webhook
+    const webhookData = {
+      form_type: 'award_submission',
+      business_name: submissionData.business_name,
+      website_url: submissionData.website_url,
+      location: submissionData.location,
+      categories: submissionData.categories,
+      why_deserve: submissionData.why_deserve,
+      contact_name: submissionData.contact_name,
+      contact_email: submissionData.contact_email,
+      contact_phone: submissionData.contact_phone,
+      timestamp: new Date().toISOString(),
+      source_url: typeof window !== 'undefined' ? window.location.href : ''
+    };
+
+    // Post to webhook
+    try {
+      const webhookResponse = await postToWebhook(webhookData);
+      console.log('Successfully posted award submission to webhook with response:', webhookResponse);
+    } catch (webhookError) {
+      console.error('Error posting award submission to webhook, but Supabase submission was successful:');
+      console.error(webhookError);
+    }
+
+    return result;
+  } catch (error) {
+    console.error('Error in submitAwardSubmission:', error);
     throw error;
   }
 }
@@ -176,14 +205,14 @@ export async function submitFormData(formType: string, formData: FormData) {
     // Post to webhook - do this before returning
     // We now await the webhook call and log more details about any failures
     console.log('Attempting to post to webhook...');
-    
+
     try {
       const webhookResponse = await postToWebhook(standardizedData);
       console.log('Successfully posted to webhook with response:', webhookResponse);
     } catch (webhookError) {
       console.error('Error posting to webhook, but Supabase submission was successful:');
       console.error(webhookError);
-      
+
       // We don't throw the error here to avoid failing the whole submission
       // if only the webhook part fails, but we log extensively to help debugging
     }

@@ -25,7 +25,50 @@ CREATE INDEX form_submissions_email_idx ON form_submissions(email);
 
 -- Create an index on created_at for chronological queries
 CREATE INDEX form_submissions_created_at_idx ON form_submissions(created_at);
+-- Create an index on created_at for chronological queries
+CREATE INDEX form_submissions_created_at_idx ON form_submissions(created_at);
 
+-- Create awards submissions table
+CREATE TABLE award_submissions (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  business_name TEXT NOT NULL,
+  website_url TEXT NOT NULL,
+  location TEXT NOT NULL,
+  categories TEXT[] NOT NULL,
+  why_deserve TEXT,
+  contact_name TEXT NOT NULL,
+  contact_email TEXT NOT NULL,
+  contact_phone TEXT, -- Made phone optional as per interface, not in original request snippet
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create indexes for award_submissions
+CREATE INDEX award_submissions_email_idx ON award_submissions(contact_email);
+CREATE INDEX award_submissions_created_at_idx ON award_submissions(created_at);
+
+-- Enable RLS for award_submissions (assuming similar policies as form_submissions)
+ALTER TABLE award_submissions ENABLE ROW LEVEL SECURITY;
+
+-- Allow anonymous users to insert award submissions
+CREATE POLICY "Allow anonymous users to insert award submissions"
+  ON award_submissions FOR INSERT
+  TO anon
+  WITH CHECK (true);
+
+-- Allow authenticated users to insert award submissions
+CREATE POLICY "Allow authenticated users to insert award submissions"
+  ON award_submissions FOR INSERT
+  TO authenticated
+  WITH CHECK (true);
+
+-- Allow authenticated users to view award submissions (adjust if needed)
+CREATE POLICY "Allow authenticated users to view award submissions"
+  ON award_submissions FOR SELECT
+  TO authenticated
+  USING (true);
+
+
+-- Create a view for contact form submissions
 -- Create a view for contact form submissions
 CREATE VIEW contact_form_submissions AS
 SELECT id, name, email, phone, company, message, service, consent, created_at
