@@ -13,7 +13,7 @@ interface ServiceLocationPageProps {
 }
 
 export const metadata: Metadata = {
-  title: 'Security & Monitoring Services | Hertfordshire Websites',
+  title: 'Security & Monitoring Services',
   description: 'Professional website security and monitoring services for Hertfordshire businesses. Keep your website secure, updated, and running smoothly.',
 };
 

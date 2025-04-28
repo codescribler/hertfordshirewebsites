@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { trackDownload } from "@/components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  title: "Chiropractor's Guide to Patient-Converting Websites | Hertfordshire Websites",
+  title: "Chiropractor's Guide to Patient-Converting Websites",
   description: "Learn how to create a chiropractic website that educates potential patients about your services and converts visitors into bookings with our comprehensive guide.",
-  keywords: "chiropractor website guide, chiropractic practice website, patient conversion, healthcare website design, Hertfordshire chiropractor, SEO for chiropractors",
+  keywords: "chiropractor website guide, chiropractic marketing, patient attraction, website optimisation, chiropractor SEO, healthcare website",
 };
 
 export default function ChiropractorGuide() {

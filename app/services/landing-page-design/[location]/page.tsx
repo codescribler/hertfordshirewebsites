@@ -13,7 +13,7 @@ interface ServiceLocationPageProps {
 }
 
 export const metadata: Metadata = {
-  title: 'Landing Page Design | Hertfordshire Websites',
+  title: 'Landing Page Design',
   description: 'Professional landing page design services for Hertfordshire businesses. Create high-converting landing pages that turn visitors into customers.',
 };
 

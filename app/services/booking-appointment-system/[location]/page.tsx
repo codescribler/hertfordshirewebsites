@@ -13,7 +13,7 @@ interface ServiceLocationPageProps {
 }
 
 export const metadata: Metadata = {
-  title: 'Booking & Appointment System | Hertfordshire Websites',
+  title: 'Booking & Appointment System',
   description: 'Professional booking and appointment system implementation for Hertfordshire businesses. Make scheduling easier for you and your customers.',
 };
 

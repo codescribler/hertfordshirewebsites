@@ -5,9 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Healthcare Website Guides | Hertfordshire Websites",
+  title: "Healthcare Website Guides",
   description: "Expert guides and resources for healthcare providers including chiropractors, physiotherapists, and dentists to improve online presence and attract more patients.",
-  keywords: "healthcare website guides, medical website resources, chiropractor website, physiotherapist online marketing, dental practice website, Hertfordshire",
+  keywords: "healthcare website guide, chiropractor website, physiotherapy website, dental practice website, healthcare marketing, patient attraction",
 };
 
 export default function GuidesPage() {

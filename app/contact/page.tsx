@@ -6,7 +6,7 @@ import DiscoveryCallForm from "@/components/contact/DiscoveryCallForm";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Hertfordshire Web Design & SEO Experts | Hertfordshire Websites",
+  title: "Contact Us | Hertfordshire Web Design & SEO Experts",
   description: "Contact Hertfordshire Websites for expert web design and SEO services in Hertfordshire. Ready to grow your business online? Book your free discovery call today!",
   keywords: "contact, web design, Hertfordshire, discovery call, website quote",
 };

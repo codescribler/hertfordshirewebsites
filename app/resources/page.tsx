@@ -5,9 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Website Tools & Healthcare Resources | Hertfordshire Websites",
+  title: "Website Tools & Healthcare Resources",
   description: "Free healthcare-specific guides and website tools to help healthcare providers and businesses improve their online presence and attract more clients.",
-  keywords: "healthcare website guides, chiropractor website, physiotherapy marketing, dental practice website, website audit tool, SEO checklist, Hertfordshire",
+  keywords: "healthcare website resources, chiropractor website guide, physiotherapy marketing, dental practice website, website audit tool, local SEO checklist, lead magnet checklist",
 };
 
 export default function ResourcesPage() {

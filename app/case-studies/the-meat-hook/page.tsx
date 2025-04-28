@@ -6,9 +6,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'The Meat Hook Case Study | Hertfordshire Websites',
+  title: 'The Meat Hook Case Study',
   description: 'Learn how Hertfordshire Websites helped The Meat Hook increase their loyalty sign-ups by 45% with a new website designed to showcase their brand personality.',
-  keywords: 'The Meat Hook, butcher website, loyalty scheme, Hertfordshire web design, business website case study',
+  keywords: 'case study, web design, butcher shop, loyalty program, Hertfordshire, website results, The Meat Hook',
 };
 
 export default function TheMeatHookCaseStudy() {

@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Locations | Hertfordshire Websites',
+  title: 'Locations',
   description: 'We provide professional web design services across Hertfordshire. Find your location to learn more about our services in your area.',
   keywords: 'Hertfordshire web design, local web designer, website services Hertfordshire, web design Watford, web design St Albans, web design Hemel Hempstead',
 };

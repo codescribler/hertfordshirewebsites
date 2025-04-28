@@ -5,9 +5,9 @@ import WebsiteAuditTool from "@/components/resources/WebsiteAuditTool";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Website Audit Tool | Hertfordshire Websites",
+  title: "Website Audit Tool",
   description: "Assess your website's effectiveness with our free website audit tool. Get actionable insights to improve your site's performance.",
-  keywords: "website audit, website assessment, homepage audit, website performance, website improvement, Hertfordshire",
+  keywords: "website audit, website analysis, SEO audit, performance audit, website checker, free website tool, website improvement",
 };
 
 export default function WebsiteAuditPage() {

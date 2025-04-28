@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { trackDownload } from "@/components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  title: "Physiotherapy Practice Online Marketing Essentials | Hertfordshire Websites",
+  title: "Physiotherapy Practice Online Marketing Essentials",
   description: "Discover the key elements every physiotherapy website needs to effectively showcase your expertise and attract the right patients in Hertfordshire.",
-  keywords: "physiotherapy website, physio marketing guide, physiotherapist website design, healthcare marketing, Hertfordshire physiotherapy, online marketing for physiotherapists",
+  keywords: "physiotherapy website guide, physiotherapy marketing, patient attraction, website optimisation, physiotherapy SEO, healthcare website",
 };
 
 export default function PhysiotherapyGuide() {

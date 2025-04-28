@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Hertfordshire Websites",
+  title: "Terms of Service",
   description: "Our terms of service outline the rules, guidelines, and agreements for using our website and services.",
   keywords: "terms of service, terms and conditions, legal, website terms, Hertfordshire Websites",
 };

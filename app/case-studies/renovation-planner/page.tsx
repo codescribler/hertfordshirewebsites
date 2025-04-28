@@ -6,9 +6,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Renovation Planner Case Study | Hertfordshire Websites',
+  title: 'Renovation Planner Case Study',
   description: 'Learn how Hertfordshire Websites helped Renovation Planner achieve a 78% growth in organic traffic through strategic SEO and content marketing.',
-  keywords: 'Renovation Planner, SEO case study, organic traffic growth, content marketing, Hertfordshire web design',
+  keywords: 'case study, SEO, content marketing, renovation planner, organic traffic growth, Hertfordshire, website results',
 };
 
 export default function RenovationPlannerCaseStudy() {

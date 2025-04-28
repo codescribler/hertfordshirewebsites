@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Our Services | Hertfordshire Websites',
+  title: 'Our Services',
   description: 'Explore our range of professional web design and digital marketing services for businesses in Hertfordshire. From simple websites to advanced SEO packages.',
   keywords: 'web design services, website packages, SEO services, content writing, Hertfordshire, digital marketing, business websites',
 };

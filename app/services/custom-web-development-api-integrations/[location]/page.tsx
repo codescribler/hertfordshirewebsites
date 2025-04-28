@@ -13,7 +13,7 @@ interface ServiceLocationPageProps {
 }
 
 export const metadata: Metadata = {
-  title: 'Custom Web Development & API Integrations | Hertfordshire Websites',
+  title: 'Custom Web Development & API Integrations',
   description: 'Professional custom web development and API integration services for Hertfordshire businesses. Create unique functionality and connect your systems for streamlined operations.',
 };
 

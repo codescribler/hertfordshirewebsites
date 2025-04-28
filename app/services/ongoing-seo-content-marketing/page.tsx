@@ -7,10 +7,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Ongoing SEO & Content Marketing | Hertfordshire Websites',
+  title: 'Ongoing SEO & Content Marketing',
   description: 'Professional ongoing SEO and content marketing services for Hertfordshire businesses to improve search rankings and drive organic traffic.',
   openGraph: {
-    title: 'Ongoing SEO & Content Marketing | Hertfordshire Websites',
+    title: 'Ongoing SEO & Content Marketing',
     description: 'Professional ongoing SEO and content marketing services for Hertfordshire businesses to improve search rankings and drive organic traffic.',
   },
 };

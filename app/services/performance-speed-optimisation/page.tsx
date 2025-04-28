@@ -7,10 +7,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Performance & Speed Optimisation | Hertfordshire Websites',
+  title: 'Performance & Speed Optimisation',
   description: 'Professional website performance and speed optimisation services for Hertfordshire businesses. Enhance your user experience and SEO with a faster website.',
   openGraph: {
-    title: 'Performance & Speed Optimisation | Hertfordshire Websites',
+    title: 'Performance & Speed Optimisation',
     description: 'Professional website performance and speed optimisation services for Hertfordshire businesses. Enhance your user experience and SEO with a faster website.',
     locale: 'en_GB',
     type: 'website',

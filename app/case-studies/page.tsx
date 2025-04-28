@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Hertfordshire Web Design & SEO Case Studies | Proven Results | Hertfordshire Websites',
+  title: 'Hertfordshire Web Design & SEO Case Studies | Proven Results',
   description: 'See real results! Explore Hertfordshire Websites case studies showcasing successful web design & SEO projects for local Hertfordshire businesses like yours. See how we drive growth.',
   keywords: 'case studies, web design portfolio, website success stories, Hertfordshire web design, business website examples',
 };

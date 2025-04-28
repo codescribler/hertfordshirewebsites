@@ -3,9 +3,9 @@ import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Hertfordshire Websites",
+  title: "Privacy Policy",
   description: "Our privacy policy explains how we collect, use, and protect your personal information when you use our website and services.",
-  keywords: "privacy policy, data protection, GDPR, cookies, personal data, Hertfordshire Websites",
+  keywords: "privacy policy, data protection, GDPR, personal information, website privacy, Hertfordshire Websites",
 };
 
 export default function PrivacyPolicyPage() {

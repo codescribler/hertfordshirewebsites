@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import ROICalculator from "@/components/calculator/ROICalculator";
 
 export const metadata: Metadata = {
-  title: "Website ROI Calculator for Hertfordshire Businesses | Hertfordshire Websites",
+  title: "Website ROI Calculator for Hertfordshire Businesses",
   description: "Estimate your website ROI! Use our free calculator designed for Hertfordshire businesses to see how professional web design & SEO can boost revenue. Try it now.",
   keywords: "ROI calculator, website ROI, conversion rate, lead generation, business growth, website performance, digital marketing ROI",
 };

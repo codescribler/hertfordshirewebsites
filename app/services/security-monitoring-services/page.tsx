@@ -7,10 +7,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Security & Monitoring Services | Hertfordshire Websites',
+  title: 'Security & Monitoring Services',
   description: 'Professional website security, maintenance, and monitoring services for Hertfordshire businesses. Keep your website secure, updated, and running smoothly.',
   openGraph: {
-    title: 'Security & Monitoring Services | Hertfordshire Websites',
+    title: 'Security & Monitoring Services',
     description: 'Professional website security, maintenance, and monitoring services for Hertfordshire businesses. Keep your website secure, updated, and running smoothly.',
   },
 };

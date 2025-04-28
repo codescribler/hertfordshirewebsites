@@ -7,10 +7,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Performance & Speed Optimization | Hertfordshire Websites',
+  title: 'Performance & Speed Optimization',
   description: 'Professional website performance and speed optimization services for Hertfordshire businesses. Enhance your user experience and SEO with a faster website.',
   openGraph: {
-    title: 'Performance & Speed Optimization | Hertfordshire Websites',
+    title: 'Performance & Speed Optimization',
     description: 'Professional website performance and speed optimization services for Hertfordshire businesses. Enhance your user experience and SEO with a faster website.',
   },
 };

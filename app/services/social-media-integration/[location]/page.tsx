@@ -13,7 +13,7 @@ interface ServiceLocationPageProps {
 }
 
 export const metadata: Metadata = {
-  title: 'Social Media Integration | Hertfordshire Websites',
+  title: 'Social Media Integration',
   description: 'Professional social media integration services for Hertfordshire businesses. Connect your website with social platforms to increase engagement and reach.',
 };
 

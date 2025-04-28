@@ -6,9 +6,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Lead Magnet Checklist | Hertfordshire Websites',
+  title: 'Lead Magnet Checklist',
   description: 'Download our free Lead Magnet Effectiveness Checklist. Learn how to create lead magnets that convert visitors into subscribers and customers.',
-  keywords: 'lead magnet, checklist, email marketing, lead generation, PDF guide, free download, conversion optimization',
+  keywords: 'lead magnet, checklist, lead generation, conversion optimization, free download, marketing resources, content marketing',
 };
 
 export default function LeadMagnetChecklistPage() {

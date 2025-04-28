@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/Button";
 import { trackDownload } from "@/components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  title: "Dental Practice Website Optimisation Guide | Hertfordshire Websites",
+  title: "Dental Practice Website Optimisation Guide",
   description: "Transform your dental practice's online presence with our comprehensive guide to creating a patient-friendly website that builds trust and attracts new patients.",
-  keywords: "dental practice website, dentist marketing guide, dental SEO, patient attraction, Hertfordshire dentist website, dental practice online marketing",
+  keywords: "dental website guide, dental practice marketing, patient attraction, website optimisation, dental SEO, healthcare website",
 };
 
 export default function DentalPracticeGuide() {

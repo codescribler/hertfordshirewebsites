@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Local SEO Checklist | Hertfordshire Websites',
+  title: 'Local SEO Checklist',
   description: 'Download our free Local SEO Checklist. Learn how to improve your business visibility in Google Maps and local search results.',
   keywords: 'local SEO, checklist, Google Maps, business listings, citations, Google Business Profile, local search, free download',
 };
