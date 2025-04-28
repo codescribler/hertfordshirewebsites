@@ -11,8 +11,8 @@ import Locations from "@/components/home/Locations";
 import Cta from "@/components/home/Cta";
 
 export const metadata: Metadata = {
-  title: "Hertfordshire Websites | Professional Web Design & SEO Services",
-  description: "Professional web design agency providing high-quality websites for businesses of all sizes in Hertfordshire. SEO-optimized, mobile-friendly websites that generate leads.",
+  title: "Web Design Hertfordshire & SEO | Results-Driven Websites | Hertfordshire Websites",
+  description: "Expert web design & SEO services in Hertfordshire. We build professional, SEO-optimised websites for local businesses that attract customers & drive growth. Get your free quote!",
   keywords: "web design, website design, Hertfordshire, SEO, business websites, professional websites, web development, lead generation",
 };
 
