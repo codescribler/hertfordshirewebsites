@@ -189,7 +189,7 @@ export const locations: Location[] = [
   },
 ];
 
-export function getAllLocationSlugs() {
+export function getAllLocationSlugs(): string[] {
   return locations.map(location => location.slug);
 }
 

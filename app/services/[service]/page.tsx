@@ -9,15 +9,15 @@ interface ServicePageProps {
   };
 }
 
-export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+export function generateMetadata({ params }: ServicePageProps): Metadata {
   const service = getServiceBySlug(params.service);
-  
+
   if (!service) {
     return {
       title: 'Service Not Found',
     };
   }
-  
+
   return {
     title: `${service.title} | Hertfordshire Websites`,
     description: service.shortDescription,
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 export function generateStaticParams() {
   // Get all service slugs dynamically
   const allSlugs = getAllServiceSlugs();
-  
+
   // Map the slugs to the expected format
   return allSlugs.map((slug: string) => ({
     service: slug
@@ -46,10 +46,10 @@ export function generateStaticParams() {
 
 export default function ServicePage({ params }: ServicePageProps) {
   const service = getServiceBySlug(params.service);
-  
+
   if (!service) {
     notFound();
   }
-  
+
   return <ServicePageTemplate service={service} />;
 }

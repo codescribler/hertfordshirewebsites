@@ -5,6 +5,12 @@ import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getAllLocationSlugs } from '@/lib/locations';
+
+// Force static rendering
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = false;
 
 interface ServiceLocationPageProps {
   params: {
@@ -12,17 +18,28 @@ interface ServiceLocationPageProps {
   };
 }
 
-export const metadata: Metadata = {
-  title: 'Social Media Integration | Hertfordshire Websites',
-  description: 'Professional social media integration services for Hertfordshire businesses. Connect your website with social platforms to increase engagement and reach.',
-};
+export function generateStaticParams() {
+  return getAllLocationSlugs().map(location => ({
+    location,
+  }));
+}
+
+export function generateMetadata({ params }: ServiceLocationPageProps): Metadata {
+  const location = params.location.replace(/-/g, ' ');
+  const locationName = location.charAt(0).toUpperCase() + location.slice(1);
+
+  return {
+    title: `Social Media Integration in ${locationName} | Hertfordshire Websites`,
+    description: `Professional social media integration services for ${locationName} businesses. Connect your website with social platforms to increase engagement and reach.`,
+  };
+}
 
 export default function SocialMediaIntegrationLocationPage({ params }: ServiceLocationPageProps) {
   // This is a simplified version of a location page for the service
   // In a real implementation, you would use getLocationBySlug to fetch the location data
   const location = params.location.replace(/-/g, ' ');
   const locationName = location.charAt(0).toUpperCase() + location.slice(1);
-  
+
   const service = {
     title: 'Social Media Integration',
     slug: 'social-media-integration',
@@ -30,7 +47,7 @@ export default function SocialMediaIntegrationLocationPage({ params }: ServiceLo
     description: `Our Social Media Integration service creates a powerful connection between your ${locationName} business website and social media platforms, maximizing your online visibility and engagement with the local community. We implement strategic integrations that display your social content on your website, make your web content easily shareable, and streamline your social media management. From feed displays and share buttons to automated posting and analytics tracking, our solutions create a cohesive online presence that helps your ${locationName} business reach more local customers and build stronger relationships with your audience across all digital touchpoints.`,
     price: 'Starting from £297'
   };
-  
+
   return (
     <>
       {/* Hero Section */}
@@ -43,16 +60,16 @@ export default function SocialMediaIntegrationLocationPage({ params }: ServiceLo
                 {service.shortDescription}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  href="/contact#discovery-call" 
-                  variant="accent" 
+                <Button
+                  href="/contact#discovery-call"
+                  variant="accent"
                   size="lg"
                 >
                   Book a Discovery Call
                 </Button>
-                <Button 
-                  href="/contact" 
-                  variant="outline" 
+                <Button
+                  href="/contact"
+                  variant="outline"
                   size="lg"
                 >
                   Contact Us
@@ -151,25 +168,25 @@ export default function SocialMediaIntegrationLocationPage({ params }: ServiceLo
             We provide {service.title} services to businesses throughout Hertfordshire. Explore our services in other locations.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <Link 
+            <Link
               href={`/services/${service.slug}/watford`}
               className="bg-primary-50 rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow duration-300 hover:bg-primary-100"
             >
               <span className="font-medium text-primary-800">Watford</span>
             </Link>
-            <Link 
+            <Link
               href={`/services/${service.slug}/st-albans`}
               className="bg-primary-50 rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow duration-300 hover:bg-primary-100"
             >
               <span className="font-medium text-primary-800">St. Albans</span>
             </Link>
-            <Link 
+            <Link
               href={`/services/${service.slug}/hemel-hempstead`}
               className="bg-primary-50 rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow duration-300 hover:bg-primary-100"
             >
               <span className="font-medium text-primary-800">Hemel Hempstead</span>
             </Link>
-            <Link 
+            <Link
               href={`/services/${service.slug}/stevenage`}
               className="bg-primary-50 rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow duration-300 hover:bg-primary-100"
             >
@@ -177,8 +194,8 @@ export default function SocialMediaIntegrationLocationPage({ params }: ServiceLo
             </Link>
           </div>
           <div className="text-center mt-8">
-            <Link 
-              href="/locations" 
+            <Link
+              href="/locations"
               className="text-primary-800 font-medium hover:text-primary-700 inline-flex items-center"
             >
               View All Locations
@@ -201,16 +218,16 @@ export default function SocialMediaIntegrationLocationPage({ params }: ServiceLo
               Contact us today to discuss how our {service.title} service can help expand your {locationName} business's online presence and engage with more customers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                href="/contact#discovery-call" 
-                variant="accent" 
+              <Button
+                href="/contact#discovery-call"
+                variant="accent"
                 size="lg"
               >
                 Book a Discovery Call
               </Button>
-              <Button 
-                href="/contact" 
-                variant="outline" 
+              <Button
+                href="/contact"
+                variant="outline"
                 className="border-white text-white hover:bg-primary-700"
                 size="lg"
               >
