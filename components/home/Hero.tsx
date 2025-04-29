@@ -23,11 +23,11 @@ const Hero = () => {
         </div>
         
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] mb-8">
-          Professional Websites <span className="text-gradient">That Grow</span> Your Hertfordshire Business
+          Professional <span className="text-gradient">Web Design & SEO in Hertfordshire</span> That Grows Your Business
         </h1>
         
         <p className="text-xl md:text-2xl text-primary-500 max-w-3xl mx-auto mb-6">
-          We create high-quality, SEO-optimised websites specifically designed for local Hertfordshire businesses looking to attract more customers.
+          We provide expert <span className="font-semibold">SEO services</span> and results-driven <span className="font-semibold">website design for Hertfordshire businesses</span> looking to attract more customers online.
         </p>
         
         {/* Three outcome checkmarks */}
