@@ -9,6 +9,11 @@ export interface Service {
   faqs: { question: string; answer: string }[];
   price?: string;
   icon?: string;
+  carePlan?: {
+    title: string;
+    price: string;
+    benefits: string[];
+  };
 }
 
 export const services: Service[] = [
@@ -314,15 +319,15 @@ export const services: Service[] = [
     shortDescription: 'A simple, professional website with essential business information.',
     description: 'The Herts Essentials package is perfect for small businesses and startups looking to establish their online presence. This streamlined website includes all the essential information about your business, a contact form, and a privacy policy for compliance. It\'s a cost-effective solution that provides a professional online presence optimized for performance and user experience.',
     features: [
-      'Professional single-page website design',
+      'Professional website design',
       'Mobile-friendly responsive layout',
       'Contact form integration',
+      'Google CAPTCHA integration for enhanced spam protection',
       'Business information sections',
       'Privacy policy page',
       'Basic SEO setup',
       'Google Analytics integration',
       'Fast loading performance',
-      'Secure hosting recommendations',
     ],
     benefits: [
       'Establish a professional online presence quickly',
@@ -343,14 +348,24 @@ export const services: Service[] = [
       },
       {
         question: 'Is hosting included in the package?',
-        answer: 'We provide hosting recommendations and can help you set up hosting, but hosting fees are separate from the website design package.'
+        answer: 'Yes, hosting is included as part of our comprehensive \'Done-for-You Website Care\' plan, which is £57/month. This plan also includes daily backups, security monitoring, and licensed plugins to ensure your website runs smoothly and securely.'
       },
       {
         question: 'Can I upgrade to a multi-page website later?',
         answer: 'Absolutely! The Herts Essentials package is designed to be expandable. You can easily upgrade to our Herts Professional package later as your business grows.'
       },
     ],
-    price: 'Starting from £699 + £57/month for hosting',
+    price: 'Site design and build from £699',
+    carePlan: {
+      title: 'Done-for-You Website Care',
+      price: '£57/month',
+      benefits: [
+        'Hosting',
+        'Daily Backups',
+        'Security Monitoring',
+        'Licensed Plugins',
+      ],
+    },
   },
   {
     id: 'herts-professional',

@@ -96,9 +96,24 @@ const ServicePageTemplate = ({ service }: ServicePageTemplateProps) => {
                 {service.description}
               </p>
               {service.price && (
-                <p className="text-xl font-semibold text-primary-800 mt-6">
-                  {service.price}
-                </p>
+                <div className="mt-6">
+                  <p className="text-xl font-semibold text-primary-800">
+                    {service.price}
+                  </p>
+                  {service.carePlan && (
+                    <div className="mt-4">
+                      <h3 className="text-lg font-semibold text-primary-800">{service.carePlan.title} – {service.carePlan.price}</h3>
+                      <ul className="mt-2 space-y-1 text-gray-700">
+                        {service.carePlan.benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-primary-800 mr-2">✔</span>
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               )}
             </div>
           </div>
