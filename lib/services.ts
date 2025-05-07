@@ -317,7 +317,7 @@ export const services: Service[] = [
     title: 'Herts Essentials',
     slug: 'herts-essentials',
     shortDescription: 'A simple, professional website with essential business information.',
-    description: 'The Herts Essentials package is perfect for small businesses and startups looking to establish their online presence. This streamlined website includes all the essential information about your business, a contact form, and a privacy policy for compliance. It\'s a cost-effective solution that provides a professional online presence optimized for performance and user experience.',
+    description: 'The Herts Essentials package is perfect for small businesses and startups looking to establish their online presence. This streamlined website includes all the essential information about your business, a contact form, and a privacy policy for compliance. It\'s a cost-effective solution that provides a professional online presence optimised for performance and user experience.',
     features: [
       'Professional website design',
       'Mobile-friendly responsive layout',
@@ -389,7 +389,7 @@ export const services: Service[] = [
     ],
     benefits: [
       'Showcase your services in detail with dedicated pages',
-      'Generate leads through optimized contact forms',
+      'Generate leads through optimised contact forms',
       'Improve local search rankings with SEO optimization',
       'Build credibility with professional design and content',
       'Engage visitors with blog content',
@@ -403,7 +403,7 @@ export const services: Service[] = [
       },
       {
         question: 'Do you provide content writing services?',
-        answer: 'Yes, we offer professional content writing services for an additional fee. We can create engaging, SEO-optimized content for all your pages.'
+        answer: 'Yes, we offer professional content writing services for an additional fee. We can create engaging, SEO-optimised content for all your pages.'
       },
       {
         question: 'How does the blog functionality work?',
@@ -425,7 +425,7 @@ export const services: Service[] = [
     features: [
       'Premium multi-page website design',
       'Up to 10 custom-designed pages',
-      'Conversion-optimized user experience',
+      'Conversion-optimised user experience',
       'Advanced SEO implementation',
       'CRM integration for lead management',
       'Email marketing automation setup',
@@ -441,7 +441,7 @@ export const services: Service[] = [
       'Page speed optimization',
     ],
     benefits: [
-      'Maximize conversion rates with optimized design',
+      'Maximize conversion rates with optimised design',
       'Automate lead nurturing to increase sales',
       'Track and measure marketing ROI',
       'Improve search engine rankings with advanced SEO',
@@ -498,7 +498,7 @@ export const services: Service[] = [
       },
       {
         question: 'Do I need to provide the content for the pages?',
-        answer: 'You can provide your own content, or we can create professional, SEO-optimized content for you at an additional cost.'
+        answer: 'You can provide your own content, or we can create professional, SEO-optimised content for you at an additional cost.'
       },
       {
         question: 'How many pages can I add?',
@@ -516,9 +516,9 @@ export const services: Service[] = [
     title: 'Custom Blog Posts & Content Writing',
     slug: 'custom-blog-posts-content-writing',
     shortDescription: 'Professional content creation to engage your audience and boost your SEO rankings.',
-    description: 'Our Custom Blog Posts & Content Writing service provides high-quality, SEO-optimized content that engages your audience and improves your search engine rankings. Our professional writers create compelling blog posts, articles, service descriptions, and other content tailored to your business and target audience. Regular, valuable content is essential for building authority in your industry and attracting more visitors to your website.',
+    description: 'Our Custom Blog Posts & Content Writing service provides high-quality, SEO-optimised content that engages your audience and improves your search engine rankings. Our professional writers create compelling blog posts, articles, service descriptions, and other content tailored to your business and target audience. Regular, valuable content is essential for building authority in your industry and attracting more visitors to your website.',
     features: [
-      'SEO-optimized content writing',
+      'SEO-optimised content writing',
       'Keyword research and implementation',
       'Industry-specific expertise',
       'Engaging and readable style',
