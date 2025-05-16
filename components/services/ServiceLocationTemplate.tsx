@@ -2,6 +2,7 @@ import { Section } from '@/components/ui/Section';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { ServiceLocation, generateServiceLocationContent } from '@/lib/service-locations';
+import { getLocationBySlug } from '@/lib/locations';
 import Image from 'next/image';
 import Link from 'next/link';
 import ServiceLocationSchema from '@/components/schema/ServiceLocationSchema';
@@ -263,15 +264,33 @@ const ServiceLocationTemplate = ({ serviceLocation }: ServiceLocationTemplatePro
                   {block.content.map((area, i) => {
                     // Convert area name to slug format
                     const areaSlug = area.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, '-');
-                    return (
-                      <Link 
-                        key={i}
-                        href={`/services/${service.slug}/${areaSlug}`}
-                        className="bg-primary-50 rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow duration-300 hover:bg-primary-100"
-                      >
-                        <span className="font-medium text-primary-800">{area}</span>
-                      </Link>
-                    );
+                    
+                    // Check if this location actually exists in our locations data
+                    const locationExists = getLocationBySlug(areaSlug);
+                    
+                    if (locationExists) {
+                      // Create a link for existing locations
+                      return (
+                        <Link 
+                          key={i}
+                          href={`/services/${service.slug}/${areaSlug}`}
+                          className="bg-primary-50 rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow duration-300 hover:bg-primary-100"
+                        >
+                          <span className="font-medium text-primary-800">{area}</span>
+                        </Link>
+                      );
+                    } else {
+                      // Display as text for non-existing locations
+                      return (
+                        <div 
+                          key={i}
+                          className="bg-gray-100 rounded-lg p-4 text-center shadow-sm"
+                        >
+                          <span className="text-gray-600">{area}</span>
+                          <div className="text-xs text-gray-500 mt-1">Coming soon</div>
+                        </div>
+                      );
+                    }
                   })}
                 </div>
               </Container>
