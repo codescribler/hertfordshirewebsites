@@ -12,6 +12,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
+          25: "#FAFAFA",
           50: "#F5F5F7",
           100: "#E8E8ED",
           200: "#D2D2D8",

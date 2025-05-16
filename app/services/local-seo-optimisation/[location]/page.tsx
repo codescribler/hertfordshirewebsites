@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getServiceBySlug } from '@/lib/services';
-import { getLocationBySlug } from '@/lib/locations';
+import { getLocationBySlug, getAllLocationSlugs } from '@/lib/locations';
 import { getServiceLocationBySlug } from '@/lib/service-locations';
 import { notFound } from 'next/navigation';
 import ServiceLocationTemplate from '@/components/services/ServiceLocationTemplate';
@@ -9,6 +9,12 @@ interface ServiceLocationPageProps {
   params: {
     location: string;
   };
+}
+
+export function generateStaticParams() {
+  return getAllLocationSlugs().map((location) => ({
+    location,
+  }));
 }
 
 export async function generateMetadata({ params }: ServiceLocationPageProps): Promise<Metadata> {
