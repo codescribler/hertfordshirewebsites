@@ -220,7 +220,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Remove duplicates and filter out US spelling variants
-  const uniqueServiceSlugs = [...new Set(allServiceSlugsForLocations)].filter(
+  const uniqueServiceSlugs = Array.from(new Set(allServiceSlugsForLocations)).filter(
     (slug) => !slug.includes('optimization') // Exclude US spelling
   );
 
