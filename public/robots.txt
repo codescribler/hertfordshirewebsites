@@ -1,14 +1,14 @@
+# Robots.txt for hertfordshirewebsites.co.uk
+
 User-agent: *
-Disallow: /admin/
-Disallow: /search/
-Disallow: /tmp/
-Crawl-delay: 5
-Host: hertfordshirewebsites.co.uk
+Allow: /
 
-# Case-sensitive URL matching
-Allow: /*?$
-Allow: /wp-content/uploads/
+# Disallow API and Next.js internal routes
+Disallow: /api/
+Disallow: /_next/
 
-# Sitemaps
+# Allow static assets
+Allow: /_next/static/
+
+# Sitemap location
 Sitemap: https://hertfordshirewebsites.co.uk/sitemap.xml
-Sitemap: https://hertfordshirewebsites.co.uk/image-sitemap.xml
