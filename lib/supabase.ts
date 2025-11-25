@@ -1,86 +1,29 @@
-import { createClient } from '@supabase/supabase-js';
 import { AwardSubmission, FormData } from './types';
 
-// Initialize the Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string;
-
-// Zapier webhook URL
-const webhookUrl = 'https://hooks.zapier.com/hooks/catch/629009/2qw8e3q/';
-
-export const supabase = createClient(supabaseUrl, supabaseKey);
-
-// FormData interface is now imported from ./types
-
-// Define the data structure for Supabase
-interface SupabaseFormData {
-  [key: string]: any;
-  form_type: string;
-  name?: string;
-  email?: string;
-  phone?: string;
-  company?: string;
-  message?: string;
-  service?: string;
-  website?: string;
-  preferred_date?: string;
-  preferred_time?: string;
-  goals?: string;
-  consent?: boolean;
-  form_data?: string | null;
-}
-
-// Helper function to post data to webhook
-async function postToWebhook(standardizedData: any) {
+// Helper function to send form data via email
+async function sendFormEmail(data: Record<string, unknown>) {
   try {
-    // Cannot directly call webhook from client-side due to CORS restrictions
-    // Instead, create a simplified object without unnecessary fields
-    // to reduce payload size
-    const webhookData = {
-      form_type: standardizedData.form_type,
-      name: standardizedData.name,
-      email: standardizedData.email,
-      phone: standardizedData.phone,
-      company: standardizedData.company,
-      message: standardizedData.message,
-      service: standardizedData.service,
-      website: standardizedData.website,
-      preferred_date: standardizedData.preferred_date,
-      preferred_time: standardizedData.preferred_time,
-      goals: standardizedData.goals,
-      timestamp: standardizedData.timestamp,
-      source_url: standardizedData.source_url
-    };
+    console.log('Sending form submission via email...');
 
-    // Log the attempt
-    console.log('Attempting to post data to webhook');
-
-    // Make a same-origin request to our backend API route
-    // which will forward the request to Zapier
-    const response = await fetch('/api/webhook-forwarder', {
+    const response = await fetch('/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        url: webhookUrl,
-        data: webhookData
-      }),
+      body: JSON.stringify(data),
     });
 
-    // Handle any errors from our API route
     if (!response.ok) {
-      const responseText = await response.text();
-      console.error(`API error: ${response.status} ${response.statusText}`);
-      console.error('Response body:', responseText);
-      throw new Error(`API error: ${response.status} ${response.statusText}`);
+      const errorData = await response.json().catch(() => ({}));
+      console.error('Email API error:', response.status, errorData);
+      throw new Error(`Email API error: ${response.status}`);
     }
 
-    const responseData = await response.json().catch(() => ({}));
-    console.log('Webhook forwarded successfully:', responseData);
-    return responseData;
+    const result = await response.json();
+    console.log('Email sent successfully:', result);
+    return result;
   } catch (error) {
-    console.error('Error posting to webhook:', error);
+    console.error('Error sending email:', error);
     throw error;
   }
 }
@@ -88,18 +31,8 @@ async function postToWebhook(standardizedData: any) {
 // Helper function to submit award submission data
 export async function submitAwardSubmission(submissionData: AwardSubmission) {
   try {
-    // Insert data into Supabase
-    const { data: result, error } = await supabase
-      .from('award_submissions')
-      .insert([submissionData]);
-
-    if (error) {
-      console.error('Error submitting award to Supabase:', error);
-      throw error;
-    }
-
-    // Create standardized data structure for webhook
-    const webhookData = {
+    // Create data structure for email
+    const emailData = {
       form_type: 'award_submission',
       business_name: submissionData.business_name,
       website_url: submissionData.website_url,
@@ -113,14 +46,9 @@ export async function submitAwardSubmission(submissionData: AwardSubmission) {
       source_url: typeof window !== 'undefined' ? window.location.href : ''
     };
 
-    // Post to webhook
-    try {
-      const webhookResponse = await postToWebhook(webhookData);
-      console.log('Successfully posted award submission to webhook with response:', webhookResponse);
-    } catch (webhookError) {
-      console.error('Error posting award submission to webhook, but Supabase submission was successful:');
-      console.error(webhookError);
-    }
+    // Send via email
+    const result = await sendFormEmail(emailData);
+    console.log('Award submission sent via email:', result);
 
     return result;
   } catch (error) {
@@ -150,32 +78,8 @@ export async function submitFormData(formType: string, formData: FormData) {
       ...otherData
     } = formData;
 
-    // Prepare data for insertion to Supabase
-    const supabaseData: SupabaseFormData = {
-      form_type: formType,
-      name,
-      email,
-      phone,
-      company,
-      message,
-      service,
-      website,
-      preferred_date: preferredDate || preferred_date,
-      preferred_time: preferredTime || preferred_time,
-      goals,
-      consent,
-      form_data: Object.keys(otherData).length > 0 ? JSON.stringify(otherData) : null,
-    };
-
-    // Remove undefined fields for Supabase
-    Object.keys(supabaseData).forEach((key) => {
-      if (supabaseData[key] === undefined) {
-        delete supabaseData[key];
-      }
-    });
-
-    // Create standardized data structure for webhook with all possible fields
-    const standardizedData = {
+    // Create standardized data structure for email
+    const emailData = {
       form_type: formType,
       name: name || '',
       email: email || '',
@@ -189,33 +93,24 @@ export async function submitFormData(formType: string, formData: FormData) {
       goals: goals || '',
       consent: consent || false,
       timestamp: new Date().toISOString(),
-      source_url: typeof window !== 'undefined' ? window.location.href : ''
+      source_url: typeof window !== 'undefined' ? window.location.href : '',
+      // Include any additional data
+      ...otherData
     };
 
-    // Insert data into Supabase
-    const { data: result, error } = await supabase
-      .from('form_submissions')
-      .insert([supabaseData]);
+    // Remove empty string values for cleaner email
+    const cleanedData = Object.fromEntries(
+      Object.entries(emailData).filter(([, value]) => value !== '' && value !== null && value !== undefined)
+    );
 
-    if (error) {
-      console.error('Error submitting form to Supabase:', error);
-      throw error;
-    }
+    // Ensure form_type and timestamp are always present
+    cleanedData.form_type = formType;
+    cleanedData.timestamp = emailData.timestamp;
 
-    // Post to webhook - do this before returning
-    // We now await the webhook call and log more details about any failures
-    console.log('Attempting to post to webhook...');
-
-    try {
-      const webhookResponse = await postToWebhook(standardizedData);
-      console.log('Successfully posted to webhook with response:', webhookResponse);
-    } catch (webhookError) {
-      console.error('Error posting to webhook, but Supabase submission was successful:');
-      console.error(webhookError);
-
-      // We don't throw the error here to avoid failing the whole submission
-      // if only the webhook part fails, but we log extensively to help debugging
-    }
+    // Send via email
+    console.log('Submitting form via email...');
+    const result = await sendFormEmail(cleanedData);
+    console.log('Form submission sent via email:', result);
 
     return result;
   } catch (error) {
