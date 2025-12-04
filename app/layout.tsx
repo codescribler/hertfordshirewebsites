@@ -34,9 +34,6 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL('https://hertfordshirewebsites.co.uk'),
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     title: 'Hertfordshire Websites | Professional Web Design & SEO Services',
     description: 'Professional web design agency providing high-quality websites for businesses of all sizes in Hertfordshire. SEO-optimized, mobile-friendly websites that generate leads.',
