@@ -3,8 +3,9 @@ import { locations } from '@/lib/locations';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'All Locations in Hertfordshire | Comprehensive Service Areas',
-  description: 'Explore all Hertfordshire locations we serve with specialised web design, SEO, and digital marketing services tailored to local business needs.',
+  title: 'Our Service Areas: Web Design Across Hertfordshire',
+  description: 'Browse all Hertfordshire towns and cities where we provide professional web design services. From Watford to St Albans, Hemel Hempstead to Hitchin - find your local web design team.',
+  keywords: 'hertfordshire locations, web design locations hertfordshire, hertfordshire service areas, web design near me hertfordshire, local web design hertfordshire',
 };
 
 export default function AllLocationsPage() {

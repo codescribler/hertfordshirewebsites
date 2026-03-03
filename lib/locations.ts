@@ -8,6 +8,8 @@ export interface Location {
   nearbyAreas?: string[];
   population?: string;
   keyIndustries?: string[];
+  webDesignFocus?: string;
+  webDesignBenefits?: string[];
 }
 
 export const locations: Location[] = [
@@ -21,6 +23,13 @@ export const locations: Location[] = [
     nearbyAreas: ['Bushey', 'Rickmansworth', 'Borehamwood', 'St. Albans'],
     population: 'Approximately 96,800',
     keyIndustries: ['Retail', 'Professional Services', 'Technology', 'Healthcare', 'Entertainment'],
+    webDesignFocus: 'Watford businesses compete in one of Hertfordshire\'s most dynamic markets. A professional, high-performance website helps you stand out, attract local customers, and make a strong first impression in Watford and surrounding areas like Bushey and Rickmansworth.',
+    webDesignBenefits: [
+      'Custom website designed to reflect your Watford business',
+      'Mobile-responsive design for customers on the go',
+      'Fast-loading pages that keep visitors engaged',
+      'Built to attract Watford\'s 96,800 residents as your customer base',
+    ],
   },
   {
     id: 'hemel-hempstead',
@@ -32,6 +41,13 @@ export const locations: Location[] = [
     nearbyAreas: ['St. Albans', 'Berkhamsted', 'Kings Langley', 'Tring'],
     population: 'Approximately 97,500',
     keyIndustries: ['Manufacturing', 'Logistics', 'Technology', 'Retail', 'Construction'],
+    webDesignFocus: 'Hemel Hempstead\'s competitive business environment demands a professional online presence. We build websites that help your business attract customers from Maylands Business Park and surrounding areas, and stand out in this thriving market.',
+    webDesignBenefits: [
+      'Professional website tailored to Hemel Hempstead businesses',
+      'Showcase your services to Maylands Business Park clients',
+      'Modern design that builds trust with local customers',
+      'Attract customers from Berkhamsted and St. Albans',
+    ],
   },
   {
     id: 'stevenage',
@@ -43,6 +59,13 @@ export const locations: Location[] = [
     nearbyAreas: ['Hitchin', 'Letchworth Garden City', 'Welwyn Garden City', 'Knebworth'],
     population: 'Approximately 87,800',
     keyIndustries: ['Aerospace', 'Pharmaceuticals', 'Biotechnology', 'Engineering', 'Technology'],
+    webDesignFocus: 'Stevenage\'s technology and engineering heritage means businesses here need a website that matches their professionalism. We build high-quality websites that help you reach the town\'s professional workforce and stand out in this competitive tech hub.',
+    webDesignBenefits: [
+      'Websites built to impress Stevenage\'s tech-savvy audience',
+      'Professional design for Bioscience Catalyst and Gunnels Wood businesses',
+      'Fast, modern websites that reflect your industry expertise',
+      'Reach nearby Hitchin and Letchworth customers online',
+    ],
   },
   {
     id: 'st-albans',
@@ -54,6 +77,13 @@ export const locations: Location[] = [
     nearbyAreas: ['Harpenden', 'Hatfield', 'Hemel Hempstead', 'Radlett'],
     population: 'Approximately 147,000',
     keyIndustries: ['Professional Services', 'Finance', 'Retail', 'Hospitality', 'Education'],
+    webDesignFocus: 'St. Albans is one of Hertfordshire\'s most competitive markets with businesses competing against London agencies. A professionally designed website gives you the edge, helping you make a lasting impression while offering personalised local service.',
+    webDesignBenefits: [
+      'Premium website design that rivals London agencies',
+      'Tailored to the affluent St. Albans customer base',
+      'Showcase your business with stunning visuals and fast performance',
+      'Local web design team who understands the St. Albans market',
+    ],
   },
   {
     id: 'bishops-stortford',
@@ -109,6 +139,13 @@ export const locations: Location[] = [
     nearbyAreas: ['Ware', 'Welwyn Garden City', 'Hoddesdon', 'Harlow'],
     population: 'Approximately 26,800',
     keyIndustries: ['Professional Services', 'Retail', 'Hospitality', 'Creative Industries', 'Education'],
+    webDesignFocus: 'Hertford businesses face competition from nearby Ware and Welwyn Garden City. A professional website helps you stand out, making sure customers choose your business when they\'re looking for services in Hertford.',
+    webDesignBenefits: [
+      'Custom website that captures Hertford\'s local character',
+      'Professional design that builds trust with customers',
+      'Attract customers from nearby Ware and Hoddesdon',
+      'Stand out from larger towns while maintaining local appeal',
+    ],
   },
   {
     id: 'hitchin',
@@ -120,6 +157,13 @@ export const locations: Location[] = [
     nearbyAreas: ['Letchworth Garden City', 'Stevenage', 'Baldock', 'Luton'],
     population: 'Approximately 33,350',
     keyIndustries: ['Retail', 'Professional Services', 'Hospitality', 'Manufacturing', 'Creative Industries'],
+    webDesignFocus: 'Hitchin has a vibrant business community and competitive local market. A well-designed website ensures your Hitchin business makes a great first impression, attracting customers from Hitchin, Letchworth, and the surrounding areas.',
+    webDesignBenefits: [
+      'Beautiful website that reflects Hitchin\'s independent spirit',
+      'Designed to attract customers across North Hertfordshire',
+      'Mobile-friendly design for on-the-go visitors',
+      'Stand out from competitors in Letchworth and Stevenage',
+    ],
   },
   {
     id: 'potters-bar',

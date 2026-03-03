@@ -75,7 +75,7 @@ body {
     @apply mb-6 text-lg leading-relaxed text-primary-500;
   }
   
-  a {
+  a:not([class]) {
     @apply text-secondary-500 hover:text-secondary-600 transition-colors duration-400 ease-apple;
   }
 }

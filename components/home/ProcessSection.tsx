@@ -1,86 +1,90 @@
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
+import AnimateIn from '@/components/ui/AnimateIn';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Discovery Call',
+    description: "A free 15-minute consultation to understand your business goals, target audience, and website needs.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+      </svg>
+    ),
+  },
+  {
+    number: '02',
+    title: 'We Build It',
+    description: 'Your custom website is designed, developed, and tested following our proven process.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+  },
+  {
+    number: '03',
+    title: 'You Grow',
+    description: 'Your website launches and starts attracting customers. We provide ongoing support to keep improving.',
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    ),
+  },
+];
 
 const ProcessSection = () => {
-  const steps = [
-    {
-      number: 1,
-      title: "Book Your Free Discovery Call",
-      description: "We'll discuss your business goals, target audience, and website needs in a no-obligation 15-minute consultation to determine if we're a good fit to work together.",
-      icon: (
-        <div className="w-20 h-20 rounded-full bg-secondary-500 text-white flex items-center justify-center text-2xl font-bold">
-          1
-        </div>
-      )
-    },
-    {
-      number: 2,
-      title: "We Build Your Custom Website",
-      description: "Our team creates your strategic website following our proven development process – from design concept to development, content creation, and thorough testing.",
-      icon: (
-        <div className="w-20 h-20 rounded-full bg-secondary-500 text-white flex items-center justify-center text-2xl font-bold">
-          2
-        </div>
-      )
-    },
-    {
-      number: 3,
-      title: "Watch Your Business Grow",
-      description: "Your new website launches and starts attracting and converting customers automatically. We provide ongoing support to ensure continued success and improvement.",
-      icon: (
-        <div className="w-20 h-20 rounded-full bg-secondary-500 text-white flex items-center justify-center text-2xl font-bold">
-          3
-        </div>
-      )
-    }
-  ];
-
   return (
-    <Section className="bg-white">
-      <div className="text-center mb-16">
-        <h2 className="section-title">Our Simple 3-Step Process</h2>
-        <p className="section-subtitle max-w-3xl mx-auto">
-          We've streamlined website development into a simple, straightforward process that makes it easy for busy business owners.
-        </p>
+    <Section className="bg-primary-50">
+      <AnimateIn>
+        <div className="text-center mb-14">
+          <p className="text-secondary-500 font-semibold text-sm uppercase tracking-wider mb-3">How It Works</p>
+          <h2 className="section-title !mb-4">Three Simple Steps</h2>
+          <p className="section-subtitle !mb-0 max-w-2xl mx-auto">
+            We&apos;ve streamlined the process so you can focus on running your business.
+          </p>
+        </div>
+      </AnimateIn>
+
+      <div className="max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {steps.map((step, index) => (
+            <AnimateIn key={index} delay={index * 150}>
+              <div className="relative bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-all duration-300 h-full cursor-default">
+                {/* Step number */}
+                <div className="text-5xl font-bold text-primary-100 mb-4">{step.number}</div>
+
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-xl bg-secondary-50 flex items-center justify-center text-secondary-500 mx-auto mb-5">
+                  {step.icon}
+                </div>
+
+                <h3 className="text-xl font-semibold !mb-3 text-primary-800">{step.title}</h3>
+                <p className="text-primary-500 !mb-0 text-base">{step.description}</p>
+
+                {/* Connector arrow on desktop */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 z-10 text-primary-200">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            </AnimateIn>
+          ))}
+        </div>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-8 mb-12">
-        {steps.map((step, index) => (
-          <div key={index} className="flex-1 relative">
-            {/* Step content */}
-            <div className="bg-white p-8 rounded-lg border border-primary-100 shadow-sm text-center h-full hover-lift">
-              <div className="flex justify-center mb-6">
-                {step.icon}
-              </div>
-              <h3 className="text-2xl font-semibold mb-4 text-primary-800">{step.title}</h3>
-              <p className="text-primary-600">{step.description}</p>
-            </div>
-            
-            {/* Connector (not on the last item) */}
-            {index < steps.length - 1 && (
-              <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-secondary-500">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      <div className="text-center mt-12">
-        <p className="text-xl text-primary-700 mb-6 max-w-3xl mx-auto">
-          Ready to get started? Book your free 15-minute discovery call today, and let's discuss how we can help your business grow online.
-        </p>
-        <Button 
-          href="/contact#discovery-call" 
-          variant="apple-primary" 
-          size="lg"
-          className="hover-lift"
-        >
-          Book Your Free Discovery Call
-        </Button>
-      </div>
+      <AnimateIn delay={300}>
+        <div className="text-center mt-12">
+          <Button href="/contact#discovery-call" variant="apple-primary" size="lg" className="hover-lift">
+            Start With a Free Discovery Call
+          </Button>
+        </div>
+      </AnimateIn>
     </Section>
   );
 };

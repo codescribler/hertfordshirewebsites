@@ -11,9 +11,9 @@ import Locations from "@/components/home/Locations";
 import Cta from "@/components/home/Cta";
 
 export const metadata: Metadata = {
-  title: "Web Design Hertfordshire & SEO | Results-Driven Websites",
-  description: "Expert web design & SEO services in Hertfordshire. We build professional, SEO-optimised websites for local businesses that attract customers & drive growth. Get your free quote!",
-  keywords: "web design, website design, Hertfordshire, SEO, business websites, professional websites, web development, lead generation",
+  title: "Web Design Hertfordshire | Professional Websites That Grow Your Business",
+  description: "Professional web design in Hertfordshire. We build stunning, high-performance websites for local businesses that attract customers and drive growth. From Watford to St Albans, we help Hertfordshire businesses succeed online. Free consultation!",
+  keywords: "web design hertfordshire, hertfordshire web design, web design agency hertfordshire, website design hertfordshire, professional web design, web developer hertfordshire, website builder hertfordshire, business website hertfordshire, affordable web design hertfordshire",
 };
 
 export default function Home() {

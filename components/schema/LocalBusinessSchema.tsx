@@ -1,9 +1,4 @@
-"use client";
-
-import Script from "next/script";
-
 const LocalBusinessSchema = () => {
-  // Construct the LocalBusiness schema.org structured data
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -63,14 +58,18 @@ const LocalBusinessSchema = () => {
       },
       {
         "@type": "City",
-        "name": "Stevenage"
-      },
-      {
-        "@type": "City",
         "name": "Hertford"
       },
       {
-        "@type": "AdministrativeArea",
+        "@type": "City",
+        "name": "Hitchin"
+      },
+      {
+        "@type": "City",
+        "name": "Stevenage"
+      },
+      {
+        "@type": "State",
         "name": "Hertfordshire"
       }
     ],
@@ -105,40 +104,58 @@ const LocalBusinessSchema = () => {
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Web Design Services",
+      "name": "Web Design & Digital Marketing Services",
       "itemListElement": [
         {
-          "@type": "Service",
-          "name": "Website Design",
-          "description": "Professional web design services for businesses of all sizes.",
-          "url": "https://hertfordshirewebsites.co.uk/services"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Professional Web Design",
+            "description": "Custom website design and development services"
+          }
         },
         {
-          "@type": "Service",
-          "name": "Local SEO Optimisation",
-          "description": "Boost your visibility in local search results and attract more nearby customers.",
-          "url": "https://hertfordshirewebsites.co.uk/services/local-seo-optimisation"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Local SEO Services",
+            "description": "Local search optimization to improve rankings in Hertfordshire"
+          }
         },
         {
-          "@type": "Service",
-          "name": "Content Writing",
-          "description": "Professional content creation to engage your audience and boost your SEO rankings.",
-          "url": "https://hertfordshirewebsites.co.uk/services/custom-blog-posts-content-writing"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO Optimization",
+            "description": "Comprehensive SEO services to increase organic traffic"
+          }
         },
         {
-          "@type": "Service",
-          "name": "Performance & Speed Optimisation",
-          "description": "Improve your website loading times and overall performance to enhance user experience and boost your search engine rankings.",
-          "url": "https://hertfordshirewebsites.co.uk/services/performance-speed-optimisation"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Content Marketing",
+            "description": "Content writing and marketing services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Website Maintenance",
+            "description": "Ongoing website care and maintenance services"
+          }
         }
       ]
     }
   };
 
   return (
-    <Script id="local-business-schema" type="application/ld+json">
-      {JSON.stringify(localBusinessSchema)}
-    </Script>
+    <script
+      id="local-business-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+    />
   );
 };
 

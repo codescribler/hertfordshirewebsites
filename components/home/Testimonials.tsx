@@ -1,195 +1,165 @@
 import { Section } from '@/components/ui/Section';
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
+import AnimateIn from '@/components/ui/AnimateIn';
+
+const clientLogos = [
+  { name: "First Point Physio", image: "/images/client-logos/firstpointphysio-logo.jpg" },
+  { name: "Laurel Cottage Dental Practice", image: "/images/client-logos/laurelcottagedentalpractice-logo.png" },
+  { name: "Renovation Planner", image: "/images/client-logos/renovationplanner-logo.png" },
+];
+
+const testimonials = [
+  {
+    quote: "Without Hertfordshire Websites, my company wouldn't be where it is today. Their broad knowledge of business setup, web design and marketing helped focus my business on what's important.",
+    author: "Brent M.",
+    company: "Renovation Planner",
+    metric: "+78%",
+    metricLabel: "organic traffic",
+  },
+  {
+    quote: "It has been such fun working with Hertfordshire Websites and we have loved the results. More importantly we have loved the response from our customers!",
+    author: "Mary-Ann Coertze",
+    company: "The Meat Hook",
+    metric: "+45%",
+    metricLabel: "loyalty sign-ups",
+  },
+  {
+    quote: "We've seen a 60% increase in qualified leads since launching our new website. The website has become our most effective marketing channel.",
+    author: "Emma Morton",
+    company: "The Meat Hook",
+    metric: "+60%",
+    metricLabel: "qualified leads",
+  },
+];
+
+const Stars = () => (
+  <div className="flex gap-0.5">
+    {Array(5).fill(0).map((_, i) => (
+      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+      </svg>
+    ))}
+  </div>
+);
 
 const Testimonials = () => {
-  // Client logos section
-  const clientLogos = [
-    { name: "First Point Physio", image: "/images/client-logos/firstpointphysio-logo.jpg" },
-    { name: "Laurel Cottage Dental Practice", image: "/images/client-logos/laurelcottagedentalpractice-logo.png" },
-    { name: "Renovation Planner", image: "/images/client-logos/renovationplanner-logo.png" },
-  ];
-
-  const testimonials = [
-    {
-      quote: "Without Hertfordshire Websites, my company wouldn't be where it is today. Their broad knowledge of business setup, web design and marketing helped focus my business on what's important. Our organic traffic increased by 78% in just 3 months!",
-      author: "Brent M.",
-      company: "Renovation Planner",
-      metric: "78% increase in organic traffic"
-    },
-    {
-      quote: "It has been such fun working with Hertfordshire Websites and we have loved the results. More importantly we have loved the response from our customers! We now have 45% more people joining our loyalty scheme and a website that reflects our personality.",
-      author: "Mary-Ann Coertze",
-      company: "The Meat Hook",
-      metric: "45% increase in loyalty sign-ups"
-    },
-    {
-      quote: "We've seen a 60% increase in qualified leads since launching our new website. We now have a better understanding of our customers and the website has become our most effective marketing channel.",
-      author: "Emma Morton",
-      company: "The Meat Hook",
-      metric: "60% increase in qualified leads"
-    },
-  ];
-
   return (
     <Section className="bg-primary-50">
-      {/* Client Partnerships */}
-      <div className="bg-white rounded-lg shadow-sm p-6 mb-24">
-        <div className="text-center mb-6">
-          <h3 className="text-xl font-semibold text-primary-800">Trusted by Hertfordshire Businesses</h3>
-          {/* 5-star rating */}
-          <div className="flex justify-center mt-2">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <svg 
-                key={star} 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 24 24" 
-                fill="currentColor" 
-                className="w-6 h-6 text-yellow-500"
-              >
-                <path 
-                  fillRule="evenodd" 
-                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" 
-                  clipRule="evenodd" 
-                />
-              </svg>
-            ))}
-          </div>
-        </div>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+      {/* Client logos bar */}
+      <AnimateIn>
+        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 mb-20">
+          <span className="text-sm font-medium text-primary-400 uppercase tracking-wider">Trusted by</span>
           {clientLogos.map((client, index) => (
-            <div key={index} className="flex flex-col items-center group">
-              <div className="h-12 w-28 relative mb-2 overflow-hidden">
-                <div className="transition-all duration-300 filter grayscale group-hover:filter-none h-full w-full">
-                  <Image 
-                    src={client.image}
-                    alt={client.name}
-                    fill
-                    sizes="112px"
-                    className="object-contain"
-                  />
-                </div>
+            <div key={index} className="group relative h-10 w-24 cursor-default">
+              <div className="transition-all duration-300 filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 h-full w-full">
+                <Image
+                  src={client.image}
+                  alt={client.name}
+                  fill
+                  sizes="96px"
+                  className="object-contain"
+                />
               </div>
-              <span className="text-sm font-medium text-primary-700">{client.name}</span>
             </div>
           ))}
         </div>
-      </div>
+      </AnimateIn>
 
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-          We take pride in delivering exceptional results for our clients. Here's what they have to say about working with us.
-        </p>
-      </div>
+      {/* Section header */}
+      <AnimateIn>
+        <div className="text-center mb-12">
+          <p className="text-secondary-500 font-semibold text-sm uppercase tracking-wider mb-3">Testimonials</p>
+          <h2 className="section-title !mb-4">Real Results From Real Businesses</h2>
+          <p className="section-subtitle !mb-0 max-w-2xl mx-auto">
+            See how we&apos;ve helped Hertfordshire businesses achieve measurable growth.
+          </p>
+        </div>
+      </AnimateIn>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {testimonials.map((testimonial, index) => (
-          <div 
-            key={index} 
-            className="bg-white rounded-lg shadow-md p-8 relative"
-          >
-            {/* Metric highlight */}
-            <div className="absolute -top-4 -right-4 bg-secondary-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">
-              {testimonial.metric}
-            </div>
-            
-            {/* Quote mark */}
-            <div className="absolute top-6 left-6 text-6xl text-primary-100 opacity-50 pointer-events-none">
-              "
-            </div>
-            
-            <div className="relative">
-              <p className="text-gray-700 mb-6 italic relative z-10">
-                "{testimonial.quote}"
-              </p>
-              
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-primary-200 rounded-full flex items-center justify-center text-primary-800 font-bold text-xl">
-                  {testimonial.author.charAt(0)}
+      {/* Testimonial cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        {testimonials.map((t, index) => (
+          <AnimateIn key={index} delay={index * 100}>
+            <div className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
+              {/* Metric badge */}
+              <div className="flex items-center justify-between mb-5">
+                <Stars />
+                <div className="text-right">
+                  <span className="text-2xl font-bold text-secondary-500">{t.metric}</span>
+                  <p className="text-xs text-primary-400 !mb-0">{t.metricLabel}</p>
                 </div>
-                <div className="ml-4">
-                  <p className="font-semibold text-primary-800 mb-0.5">{testimonial.author}</p>
-                  <p className="text-sm text-gray-600 -mt-0.5">{testimonial.company}</p>
+              </div>
+
+              {/* Quote */}
+              <blockquote className="flex-grow mb-6">
+                <p className="text-primary-600 text-base leading-relaxed !mb-0">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+              </blockquote>
+
+              {/* Author */}
+              <div className="flex items-center gap-3 pt-5 border-t border-primary-50">
+                <div className="w-10 h-10 bg-secondary-50 rounded-full flex items-center justify-center text-secondary-500 font-semibold text-sm">
+                  {t.author.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-semibold text-sm text-primary-800 !mb-0">{t.author}</p>
+                  <p className="text-xs text-primary-400 !mb-0">{t.company}</p>
                 </div>
               </div>
             </div>
-          </div>
+          </AnimateIn>
         ))}
       </div>
 
-      {/* Case Studies Section Header */}
-      <div className="text-center mt-20 mb-8">
-        <h2 className="text-3xl font-bold mb-4">Client Success Stories</h2>
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-          See how we've helped local Hertfordshire businesses achieve remarkable results.
-        </p>
+      {/* Case Studies */}
+      <AnimateIn>
+        <div className="text-center mb-10">
+          <h3 className="text-2xl font-semibold !mb-2 text-primary-800">Client Success Stories</h3>
+          <p className="text-primary-500 !mb-0">See the full picture of how we helped these businesses grow.</p>
+        </div>
+      </AnimateIn>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {[
+          {
+            image: '/images/meathook_website.png',
+            alt: 'The Meat Hook website case study',
+            title: 'The Meat Hook: 45% Increase in Loyalty Sign-ups',
+            description: "The Meat Hook needed a website that reflected their personality and grew their loyalty programme. We delivered both.",
+            link: '/case-studies/the-meat-hook',
+          },
+          {
+            image: '/images/renovationplanner_website.png',
+            alt: 'Renovation Planner website case study',
+            title: 'Renovation Planner: 78% Growth in Organic Traffic',
+            description: 'Renovation Planner needed better visibility online. We built a site with SEO at its core and the results speak for themselves.',
+            link: '/case-studies/renovation-planner',
+          },
+        ].map((cs, index) => (
+          <AnimateIn key={index} delay={index * 100}>
+            <a href={cs.link} className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 block cursor-pointer">
+              <div className="relative aspect-[16/10] bg-primary-50 p-4">
+                <Image src={cs.image} alt={cs.alt} fill className="object-contain" />
+              </div>
+              <div className="p-7">
+                <h4 className="text-lg font-semibold !mb-2 text-primary-800 group-hover:text-secondary-500 transition-colors duration-300">{cs.title}</h4>
+                <p className="text-sm text-primary-500 !mb-3">{cs.description}</p>
+                <span className="text-secondary-500 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
+                  Read case study
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </AnimateIn>
+        ))}
       </div>
 
-      {/* Case Studies Preview */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Case Study 1 */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative aspect-[16/10] bg-white p-4">
-            <Image
-              src="/images/meathook_website.png"
-              alt="The Meat Hook website case study"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div className="p-8">
-            <h3 className="text-xl font-bold mb-3">The Meat Hook: 45% Increase in Loyalty Sign-ups</h3>
-            <p className="text-gray-700 mb-4">
-              The Meat Hook needed a website that would increase loyalty members. Their initial attempt at a website wasn't up to scratch, so they turned to us for help.
-            </p>
-            <a 
-              href="/case-studies/the-meat-hook" 
-              className="text-primary-800 font-medium hover:text-primary-700 inline-flex items-center"
-            >
-              Read the full case study
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        {/* Case Study 2 */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative aspect-[16/10] bg-white p-4">
-            <Image
-              src="/images/renovationplanner_website.png"
-              alt="Renovation Planner website case study"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div className="p-8">
-            <h3 className="text-xl font-bold mb-3">Renovation Planner: 78% Growth in Organic Traffic</h3>
-            <p className="text-gray-700 mb-4">
-              Renovation Planner needed to improve their online visibility and attract more local customers. We implemented a comprehensive SEO strategy alongside their new website.
-            </p>
-            <a 
-              href="/case-studies/renovation-planner" 
-              className="text-primary-800 font-medium hover:text-primary-700 inline-flex items-center"
-            >
-              Read the full case study
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* View All Case Studies Button */}
       <div className="text-center mt-10">
-        <Button 
-          href="/case-studies" 
-          variant="apple-primary"
-          className="hover-lift"
-        >
+        <Button href="/case-studies" variant="apple-secondary" className="hover-lift">
           View All Case Studies
         </Button>
       </div>

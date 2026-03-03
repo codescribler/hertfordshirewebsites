@@ -36,13 +36,26 @@ export function getServiceLocationBySlug(slug: string): ServiceLocation | null {
   const location = getLocationBySlug(locationSlug);
   
   if (!service || !location) return null;
-  
+
+  // Determine service category for better title suffix
+  let titleSuffix = 'Hertfordshire Websites';
+
+  if (service.slug.includes('seo') || service.slug === 'advanced-seo-package') {
+    titleSuffix = 'Hertfordshire Websites';
+  } else if (service.slug.includes('content') || service.slug.includes('blog') || service.slug.includes('copywriting')) {
+    titleSuffix = 'Content & Web Design Services';
+  } else if (service.slug.includes('ecommerce') || service.slug.includes('shop')) {
+    titleSuffix = 'Ecommerce Web Design';
+  } else if (service.slug.includes('care-plan') || service.slug.includes('maintenance')) {
+    titleSuffix = 'Website Care & Maintenance';
+  }
+
   return {
     service,
     location,
     slug,
-    title: `${service.title} in ${location.name} | Professional Web Design Services`,
-    description: `Professional ${service.title} web design services in ${location.name}, Hertfordshire. Custom websites designed to attract customers and help your business grow.`,
+    title: `${service.title} in ${location.name} | ${titleSuffix}`,
+    description: `Professional ${service.title.toLowerCase()} services in ${location.name}, Hertfordshire. ${service.shortDescription} Trusted by ${location.name} businesses for quality and results. Get your free consultation today!`,
     keywords: [
       `${service.title} ${location.name}`,
       `web design ${location.name}`,

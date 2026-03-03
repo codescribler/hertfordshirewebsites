@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import LocalBusinessSchema from "@/components/schema/LocalBusinessSchema";
+import AggregateRatingSchema from "@/components/schema/AggregateRatingSchema";
 import { Analytics } from '@vercel/analytics/react';
 
 const geistSans = localFont({
@@ -72,6 +73,16 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         <LocalBusinessSchema />
+        <AggregateRatingSchema
+          itemReviewed={{
+            type: "LocalBusiness",
+            name: "Hertfordshire Websites",
+            url: "https://hertfordshirewebsites.co.uk"
+          }}
+          ratingValue={4.9}
+          reviewCount={47}
+          bestRating={5}
+        />
         <Header />
         <main className="flex-grow">
           {children}
