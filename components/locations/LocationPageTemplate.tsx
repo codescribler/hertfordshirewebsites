@@ -85,6 +85,152 @@ const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
         </Container>
       </Section>
 
+      {/* Business landscape — research-driven section. Only renders when populated. */}
+      {location.businessLandscape && (
+        <Section className="bg-primary-50">
+          <Container>
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-3 text-center">
+                The {location.businessLandscape.localAuthority} business landscape
+              </h2>
+              <p className="text-center text-gray-600 mb-10 text-sm">
+                Sector and size figures from{' '}
+                <a
+                  href={location.businessLandscape.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-primary-700"
+                >
+                  ONS UK Business Counts {location.businessLandscape.year}
+                </a>
+                {location.businessLandscape.postcodeActiveCompanies !== undefined && (
+                  <>
+                    ; {location.postcodeArea} company counts from{' '}
+                    <a
+                      href="https://find-and-update.company-information.service.gov.uk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-primary-700"
+                    >
+                      Companies House
+                    </a>
+                    {location.businessLandscape.companiesHouseAsOf && (
+                      <> (as of {location.businessLandscape.companiesHouseAsOf})</>
+                    )}
+                  </>
+                )}
+                .
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-10">
+                <div className="bg-white rounded-lg p-6 text-center shadow-sm">
+                  <div className="text-4xl font-bold text-primary-800 mb-2">
+                    {location.businessLandscape.totalBusinesses.toLocaleString()}
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    business units in {location.businessLandscape.localAuthority}
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-6 text-center shadow-sm">
+                  <div className="text-4xl font-bold text-primary-800 mb-2">
+                    {location.businessLandscape.microBusinessPct}%
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    are micro-businesses (fewer than 10 employees) — exactly who we build websites for
+                  </div>
+                </div>
+                {location.businessLandscape.postcodeActiveCompanies !== undefined ? (
+                  <div className="bg-white rounded-lg p-6 text-center shadow-sm">
+                    <div className="text-4xl font-bold text-primary-800 mb-2">
+                      {location.businessLandscape.postcodeActiveCompanies.toLocaleString()}
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      active companies registered to{' '}
+                      <span className="font-medium">{location.postcodeArea}</span>
+                      {location.businessLandscape.postcodeNewLast12Months !== undefined && (
+                        <>
+                          {' '}—{' '}
+                          <span className="font-medium">
+                            {location.businessLandscape.postcodeNewLast12Months.toLocaleString()}
+                          </span>{' '}
+                          new in the last 12 months
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  location.postcodeArea && (
+                    <div className="bg-white rounded-lg p-6 text-center shadow-sm">
+                      <div className="text-4xl font-bold text-primary-800 mb-2">
+                        {location.postcodeArea}
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        postcode area covered, plus surrounding {location.businessLandscape.localAuthority}
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+
+              <h3 className="text-xl font-semibold mb-4">
+                Top sectors in {location.businessLandscape.localAuthority}
+              </h3>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <ul className="space-y-3">
+                  {location.businessLandscape.topSectors.map((sector, idx) => {
+                    const max = location.businessLandscape!.topSectors[0].count;
+                    const pct = Math.round((sector.count / max) * 100);
+                    return (
+                      <li key={idx} className="flex items-center gap-4">
+                        <div className="flex-1">
+                          <div className="flex justify-between text-sm mb-1">
+                            <span className="font-medium text-gray-800">{sector.label}</span>
+                            <span className="text-gray-600">{sector.count.toLocaleString()}</span>
+                          </div>
+                          <div className="w-full bg-gray-100 rounded-full h-2">
+                            <div
+                              className="bg-primary-600 h-2 rounded-full"
+                              style={{ width: `${pct}%` }}
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* Commercial areas — town-specific named clusters. */}
+      {location.commercialAreas && location.commercialAreas.length > 0 && (
+        <Section className="bg-white">
+          <Container>
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl font-bold mb-3 text-center">
+                Where {location.name} businesses cluster
+              </h2>
+              <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+                We work across all of {location.name}, but most of our clients trade from one of these commercial areas. Knowing the local geography lets us tune sites for the customers each area attracts.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                {location.commercialAreas.map((area, idx) => (
+                  <div key={idx} className="bg-primary-50 rounded-lg p-6">
+                    <div className="flex items-baseline gap-3 mb-2">
+                      <h3 className="text-xl font-semibold text-primary-800">{area.name}</h3>
+                    </div>
+                    <p className="text-sm text-gray-500 uppercase tracking-wide mb-3">{area.type}</p>
+                    <p className="text-gray-700">{area.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </Section>
+      )}
+
       {/* Website Packages Section */}
       <Section className="bg-primary-50">
         <Container>
@@ -232,6 +378,64 @@ const LocationPageTemplate = ({ location }: LocationPageTemplateProps) => {
             </div>
           </Container>
         </Section>
+      )}
+
+      {/* Town-specific FAQs */}
+      {location.townFAQs && location.townFAQs.length > 0 && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: location.townFAQs.map(faq => ({
+                  '@type': 'Question',
+                  name: faq.question,
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: faq.answer,
+                  },
+                })),
+              }),
+            }}
+          />
+          <Section className="bg-white">
+            <Container>
+              <div className="max-w-3xl mx-auto">
+                <h2 className="text-3xl font-bold mb-10 text-center">
+                  FAQs from {location.name} businesses
+                </h2>
+                <div className="space-y-4">
+                  {location.townFAQs.map((faq, idx) => (
+                    <details
+                      key={idx}
+                      className="group bg-primary-50 rounded-lg p-6 cursor-pointer"
+                    >
+                      <summary className="font-semibold text-lg text-primary-800 list-none flex justify-between items-center">
+                        <span>{faq.question}</span>
+                        <svg
+                          className="w-5 h-5 transition-transform group-open:rotate-180"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </summary>
+                      <p className="mt-4 text-gray-700 leading-relaxed">{faq.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </Container>
+          </Section>
+        </>
       )}
 
       {/* CTA Section */}

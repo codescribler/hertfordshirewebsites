@@ -1,3 +1,34 @@
+export interface BusinessLandscape {
+  /** Local Authority District the town sits inside (where the data is reported). */
+  localAuthority: string;
+  /** Total business units in the LAD per ONS UK Business Counts. */
+  totalBusinesses: number;
+  /** Year of the ONS reading (e.g. 2025). */
+  year: number;
+  /** Percentage of those businesses that are micro (0-9 employees). 0-100. */
+  microBusinessPct: number;
+  /** Top sectors by business unit count (display 4-6). */
+  topSectors: { label: string; count: number }[];
+  /** Citation URL — must link to the published ONS dataset. */
+  sourceUrl: string;
+  /** Postcode-specific Companies House counts (optional). */
+  postcodeActiveCompanies?: number;
+  postcodeNewLast12Months?: number;
+  /** ISO date when the Companies House counts were pulled. */
+  companiesHouseAsOf?: string;
+}
+
+export interface CommercialArea {
+  name: string;
+  type: string;
+  description: string;
+}
+
+export interface TownFAQ {
+  question: string;
+  answer: string;
+}
+
 export interface Location {
   id: string;
   name: string;
@@ -10,6 +41,12 @@ export interface Location {
   keyIndustries?: string[];
   webDesignFocus?: string;
   webDesignBenefits?: string[];
+  /** Research-driven content. Only populated for priority pages. */
+  businessLandscape?: BusinessLandscape;
+  commercialAreas?: CommercialArea[];
+  townFAQs?: TownFAQ[];
+  /** Postcode area covered (e.g. "SG6"). Shown alongside the landscape block. */
+  postcodeArea?: string;
 }
 
 export const locations: Location[] = [
@@ -112,11 +149,74 @@ export const locations: Location[] = [
     name: 'Letchworth Garden City',
     slug: 'letchworth-garden-city',
     county: 'Hertfordshire',
-    description: 'Letchworth Garden City is the world\'s first garden city, combining urban amenities with green spaces. This unique heritage has created a distinctive business environment that attracts companies looking for a high quality of life for their employees alongside good business facilities.',
-    businessFocus: 'Letchworth has several business areas including the Spirella Building and Works Road industrial area. The town has a tradition of manufacturing and engineering, alongside newer technology and service businesses.',
+    postcodeArea: 'SG6',
+    description: 'Letchworth Garden City is the world\'s first garden city — founded in 1903 on Ebenezer Howard\'s plan and built around a deliberate separation of housing, industry and green space. That blueprint still shapes how local business runs today. The original industrial belt east of the town centre (Works Road, Pixmore Avenue, the Spirella Building) is now home to a long tail of small office-based firms, makers and creative studios rather than the corset factories, parachute makers and tabulating-machine plants that put Letchworth on the map in the early 20th century.',
+    businessFocus: 'Letchworth\'s economy shifted out of large-scale manufacturing through the 1970s and 80s — Spirella, ICL and Borg-Warner all closed their factories by 1989 — and the vacated industrial sites were redeveloped as business parks and serviced offices. The result today is a town dominated by small firms: independent retailers along Eastcheap and Leys Avenue, professional services clustered near the railway station, and light manufacturing and creative workshops on the historic Works Road industrial estate.',
     nearbyAreas: ['Hitchin', 'Baldock', 'Stevenage', 'Biggleswade'],
-    population: 'Approximately 33,600',
-    keyIndustries: ['Manufacturing', 'Engineering', 'Technology', 'Creative Industries', 'Retail'],
+    population: 'Approximately 33,990 (2021 census)',
+    keyIndustries: ['Professional Services', 'Construction', 'Retail', 'Creative Industries', 'Light Manufacturing'],
+    businessLandscape: {
+      localAuthority: 'North Hertfordshire',
+      totalBusinesses: 6205,
+      year: 2025,
+      microBusinessPct: 89,
+      topSectors: [
+        { label: 'Professional, scientific & technical', count: 1195 },
+        { label: 'Wholesale & retail trade', count: 845 },
+        { label: 'Construction', count: 830 },
+        { label: 'Information & communication', count: 560 },
+        { label: 'Administrative & support services', count: 500 },
+        { label: 'Manufacturing', count: 345 },
+      ],
+      sourceUrl: 'https://www.nomisweb.co.uk/datasets/idbrlu',
+      postcodeActiveCompanies: 2654,
+      postcodeNewLast12Months: 279,
+      companiesHouseAsOf: '2026-05-18',
+    },
+    commercialAreas: [
+      {
+        name: 'Works Road industrial estate',
+        type: 'Historic industrial belt',
+        description: 'The eastern industrial corridor along Works Road and Pixmore Avenue was Letchworth\'s original manufacturing zone. Today it hosts a mix of light industry, trade counters, automotive specialists and creative workshops. Companies registered here typically operate in SIC sections C (Manufacturing) and G (Wholesale & retail trade).',
+      },
+      {
+        name: 'The Spirella Building',
+        type: 'Heritage commercial hub',
+        description: 'Cecil Hignett\'s Arts and Crafts factory (completed 1920, locally known as "Castle Corset") was redeveloped into managed offices in the 1990s. It now houses around 50 small businesses — primarily professional services, creative agencies and consultancies — making it the most distinctive office address in the town.',
+      },
+      {
+        name: 'Eastcheap and Leys Avenue',
+        type: 'Town-centre retail',
+        description: 'The main commercial high street, designed as a single retail spine in the original 1903 masterplan. Dominated by independent retailers, food and beverage, and personal services — the kind of trader who needs a website that converts foot-traffic searchers into walk-ins.',
+      },
+      {
+        name: 'Letchworth Business Park (Blackhorse Road area)',
+        type: 'Modern business park',
+        description: 'Newer-build serviced offices and light industrial units on the northern edge of the original industrial belt. Tenant mix skews toward administrative services, IT firms and trades counters serving North Hertfordshire.',
+      },
+    ],
+    townFAQs: [
+      {
+        question: 'I run a small business in Letchworth — is this site relevant to me?',
+        answer: '89% of businesses in North Hertfordshire (the local authority covering Letchworth) employ fewer than 10 people, per the 2025 ONS UK Business Counts. That micro and small-business tier is exactly who we build websites for. If you trade from Works Road, the Spirella Building, Eastcheap or anywhere within SG6, our packages are sized for you.',
+      },
+      {
+        question: 'What does a website cost for a Letchworth business?',
+        answer: 'Our entry-level Herts Essentials package starts at a fixed monthly figure designed for sole traders and micro-businesses, with Herts Professional and Herts Growth tiers for firms with more service depth or higher volumes. See the Services page for current pricing. Most Letchworth clients we work with sit in the Essentials or Professional tier.',
+      },
+      {
+        question: 'Do you work with manufacturers and trades on the Works Road estate?',
+        answer: 'Yes. Construction and Manufacturing together account for around 1,175 of the 6,205 business units in North Hertfordshire (ONS 2025), and a high share sit on the historic Works Road / Pixmore Avenue industrial belt. We build trade-focused sites with clear service area maps, trust signals (insurance, accreditations, real reviews), and quote-request forms designed for phone-first leads.',
+      },
+      {
+        question: 'How do you handle the SG6 area specifically — do you only serve Letchworth town centre?',
+        answer: 'We cover the full SG6 postcode area. There are 2,654 active companies registered to SG6 today, with 279 incorporated in the last 12 months (Companies House, 2026-05-18) — that\'s the population we build for. We also work across the rest of North Hertfordshire (Hitchin SG4, Baldock SG7, Knebworth SG3) and the wider county. Local SEO work targets the specific postcode districts you trade in, not just a single town name.',
+      },
+      {
+        question: 'Letchworth has Garden City planning controls — does that affect my website?',
+        answer: 'Garden City Heritage Foundation rules govern physical signage, frontages and building works, not your digital presence. That said, we often help heritage-aware businesses (the Spirella tenants, independent retailers on Eastcheap) lean into the Garden City story on their websites — it\'s a genuine differentiator that customers searching from outside the area find compelling.',
+      },
+    ],
   },
   {
     id: 'hatfield',
