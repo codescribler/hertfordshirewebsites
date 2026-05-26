@@ -11,13 +11,17 @@ export async function generateMetadata(): Promise<Metadata> {
       title: 'Service Not Found',
     };
   }
-  
+
+  const title = 'Email List Building & Automation Services in Hertfordshire';
+  const description =
+    'Email list building, lead magnets and automated nurture sequences for Hertfordshire businesses. Build your subscriber base and convert leads while you sleep.';
+
   return {
-    title: `${service.title} | Hertfordshire Websites`,
-    description: service.shortDescription,
+    title: `${title} | Hertfordshire Websites`,
+    description,
     openGraph: {
-      title: `${service.title} | Hertfordshire Websites`,
-      description: service.shortDescription,
+      title: `${title} | Hertfordshire Websites`,
+      description,
     },
   };
 }
